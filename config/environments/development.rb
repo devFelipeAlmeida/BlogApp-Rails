@@ -10,16 +10,16 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-  address:         "smtp.gmail.com",
-  port:            587,
-  domain:          "localhost",
-  user_name:       "devfelipe321@gmail.com",
-  password:        "jlun vbyq ruhz avas", # Substitua aqui pela senha do aplicativo gerada
-  authentication:  "plain",
-  enable_starttls: true,
-  open_timeout:    5,
-  read_timeout:    5
-}
+    address:         "smtp.gmail.com",
+    port:            587,
+    domain:          "localhost",
+    user_name:       ENV["SMTP_USERNAME"],
+    password:        ENV["SMTP_PASSWORD"],
+    authentication:  "plain",
+    enable_starttls: true,
+    open_timeout:    5,
+    read_timeout:    5
+  }
 
   # Do not eager load code on boot.
   config.eager_load = false

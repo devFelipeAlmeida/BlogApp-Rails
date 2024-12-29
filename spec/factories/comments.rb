@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :comment do
-    message { 'Este é um comentário de exemplo.' }
+    message { Faker::Lorem.sentence }
     association :post
     association :user
   end

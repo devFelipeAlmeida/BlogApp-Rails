@@ -19,10 +19,10 @@
 
           <!-- Informações do Post -->
           <p class="text-muted">
-            <small>
-              Publicado por <a href="#"><%= post.user.name %></a> em <%= post.created_at.strftime("%d/%m/%Y") %>
-            </small>
-          </p>
+  <small>
+    Publicado por <%= link_to post.user.name, user_path(post.user) %> em <%= post.created_at.strftime("%d/%m/%Y") %>
+  </small>
+</p>
 
           <!-- Tags -->
           <% if post.tags.any? %>

@@ -30,11 +30,11 @@
             <p class="text-muted">Comentários Recebidos</p>
           </div>
           <div class="col-md-4">
-            <p class="fs-3 fw-bold text-primary mb-0">
-              <%= rand(100..1000) %>
-            </p>
-            <p class="text-muted">Visualizações</p>
-          </div>
+          <p class="fs-3 fw-bold text-primary mb-0">
+           <%= Comment.where(user_id: @user.id).count %>
+          </p>
+          <p class="text-muted">Comentários do User</p>
+        </div>
         </div>
       </div>
     </div>

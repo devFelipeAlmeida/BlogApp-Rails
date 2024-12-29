@@ -18,9 +18,9 @@
   </head>
 
   <body>
-    <% if user_signed_in? || current_page?(root_path) %>
-      <%= render 'layouts/navbar' %>
-    <% end %>
+ <% if current_page?(root_path) || current_page?(post_path(@post)) || current_page?(user_path(@user)) %>
+    <%= render 'layouts/navbar' %>
+  <% end %>
 
     <%= yield %>
     

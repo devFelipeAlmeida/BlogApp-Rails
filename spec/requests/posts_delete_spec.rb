@@ -18,7 +18,7 @@ RSpec.describe "Posts", type: :request do
 
         # Verifica a resposta JSON
         json_response = JSON.parse(response.body)
-        expect(json_response).to include("message" => "Post was successfully destroyed")  # Confirma a mensagem no JSON
+        expect(json_response).to include("message" => "Post excluído com sucesso")  # Confirma a mensagem no JSON
 
         # Verifica o status HTTP
         expect(response.status).to eq(200)  # Espera um status HTTP 200 (OK)

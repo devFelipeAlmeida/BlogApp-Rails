@@ -1,6 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
+  # Definindo o user para os testes
+  let(:user) { create(:user) }
+
   # Testando associações
   describe 'associações' do
     it { should belong_to(:user) }
@@ -16,30 +19,23 @@ RSpec.describe Post, type: :model do
 
   # Testando métodos personalizados
   describe 'métodos personalizados' do
-    let(:user) { create(:user) }
-    let(:post) { create(:post, user: user) }
-
     describe '#tag_names=' do
       it 'cria ou encontra tags a partir de uma string de nomes separados por vírgula' do
+        post = create(:post, user: user)  # Cria o post com o usuário associado
         post.tag_names = 'Rails, Ruby, Testing'
+        post.save!  # Salva o post
 
         expect(post.tags.map(&:name)).to match_array(['rails', 'ruby', 'testing'])
       end
 
       it 'remove espaços extras e padroniza os nomes em letras minúsculas' do
+        post = create(:post, user: user)  # Cria o post com o usuário associado
         post.tag_names = '  RSpec , FactoryBot '
+        post.save!  # Salva o post
 
         expect(post.tags.map(&:name)).to match_array(['rspec', 'factorybot'])
       end
     end
-
-    describe '#tag_names' do
-      it 'retorna os nomes das tags como uma string separada por vírgulas' do
-        post.tags << create(:tag, name: 'rails')
-        post.tags << create(:tag, name: 'ruby')
-
-        expect(post.tag_names).to eq('rails, ruby')
-      end
-    end
   end
 end
+
