@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,58 +9,70 @@
 
 <body class="bg-light">
     <div class="container auth-container">
-  <% if alert %>
-    <div class="flash-message alert"><%= alert %></div>
-  <% end %>
+        <!-- Flash message -->
+        <% if alert %>
+            <div class="flash-message alert"><%= alert %></div>
+        <% end %>
 
-        <div class="container auth-container position-relative">
-        <div class="card shadow-sm">
-            <div class="card-body p-4">
-                <h4 class="card-title text-center mb-4">Login</h4>
-                <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-                    <div class="mb-3">
-                        <%= f.label :email, "Email", class: "form-label" %>
-                        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
-                    </div>
+        <!-- Card de Login -->
+        <div class="container position-relative">
+            <div class="card shadow-sm">
+                <div class="card-body p-4">
+                    <h4 class="card-title text-center mb-4">Login</h4>
 
-                    <div class="mb-3">
-                        <%= f.label :password, "Senha", class: "form-label" %>
-                        <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
-                    </div>
-
-                    <% if devise_mapping.rememberable? %>
-                        <div class="mb-3 form-check">
-                            <%= f.check_box :remember_me, class: "form-check-input" %>
-                            <%= f.label :remember_me, class: "form-check-label" %>
+                    <!-- Formulário de Login -->
+                    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                        <!-- Campo de Email -->
+                        <div class="mb-3">
+                            <%= f.label :email, "Email", class: "form-label" %>
+                            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
                         </div>
+
+                        <!-- Campo de Senha -->
+                        <div class="mb-3">
+                            <%= f.label :password, t(:password_label), class: "form-label" %>
+                            <%= f.password_field :password, autocomplete: t(:current_password_label), class: "form-control" %>
+                        </div>
+
+                        <!-- Lembre-se de mim -->
+                        <% if devise_mapping.rememberable? %>
+                            <div class="mb-3 form-check">
+                                <%= f.check_box :remember_me, class: "form-check-input" %>
+                                <%= f.label :remember_me, class: "form-check-label" %>
+                            </div>
+                        <% end %>
+
+                        <!-- Link de esqueci minha senha -->
+                        <div class="mb-3">
+                            <%= link_to t(:title), new_password_path(resource_name), class: "text-decoration-none" %>
+                        </div>
+
+                        <!-- Botão de Submissão -->
+                        <%= f.submit t(:submit_button_enter), class: "btn btn-primary w-100" %>
                     <% end %>
-
-                    <div class="mb-3">
-                        <%= link_to "Esqueceu sua senha?", new_password_path(resource_name), class: "text-decoration-none" %>
-                    </div>
-
-                    <%= f.submit "Entrar", class: "btn btn-primary w-100" %>
-                <% end %>
+                </div>
             </div>
         </div>
     </div>
-    
+
+    <!-- Script para ocultar a mensagem flash após 5 segundos -->
     <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const flashMessages = document.querySelectorAll(".flash-message");
+        document.addEventListener("DOMContentLoaded", function () {
+            const flashMessages = document.querySelectorAll(".flash-message");
 
-    flashMessages.forEach((message) => {
-      // Espera 5 segundos antes de desaparecer
-      setTimeout(() => {
-        message.classList.add("hide");
-      }, 5000); // Tempo em milissegundos (5 segundos)
+            flashMessages.forEach((message) => {
+                // Espera 5 segundos antes de desaparecer
+                setTimeout(() => {
+                    message.classList.add("hide");
+                }, 5000); // Tempo em milissegundos (5 segundos)
 
-      // Remove o elemento do DOM após a animação
-      setTimeout(() => {
-        message.remove();
-      }, 5500); // Tempo suficiente para completar a animação
-    });
-  });
-</script>
+                // Remove o elemento do DOM após a animação
+                setTimeout(() => {
+                    message.remove();
+                }, 5500); // Tempo suficiente para completar a animação
+            });
+        });
+    </script>
 </body>
+
 </html>

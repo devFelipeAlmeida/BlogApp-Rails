@@ -7,24 +7,41 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <%= link_to "Home", root_path, class: "nav-link active" %>
+          <%= link_to t(:home), root_path, class: "nav-link active" %>
         </li>
         <% if user_signed_in? %>
         <li class="nav-item">
-               <%= link_to "Perfil", user_path(current_user), class: "nav-link active" %>
+          <%= link_to t(:profile), user_path(current_user), class: "nav-link active" %>
         </li>
         <% end %>
       </ul>
       <div class="d-flex">
         <% if user_signed_in? %>
-          <%= link_to "Novo Post", new_post_path, class: "btn btn-success me-2" %>
-            <%= link_to 'Change Password',edit_user_registration_path, class: 'btn btn-primary me-2' %>
-          <%= button_to "Sair", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
+          <%= link_to t(:new_post), new_post_path, class: "btn btn-success me-2" %>
+          <%= link_to t(:change_password), edit_user_registration_path, class: 'btn btn-primary me-2' %>
+          <%= button_to t(:logout), destroy_user_session_path, method: :delete, class: "btn btn-danger me-2" %>
         <% else %>
           <%= link_to "Login", new_user_session_path, class: "btn btn-outline-primary me-2" %>
-          <%= link_to "Cadastrar", new_user_registration_path, class: "btn btn-primary" %>
+          <%= link_to t(:submit_button_register), new_user_registration_path, class: "btn btn-primary me-2" %>
         <% end %>
+
+        <!-- Dropdown de idioma -->
+        <div class="dropdown">
+          <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+            <%= I18n.locale == :pt ? "Português" : "English" %>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li>
+              <%= link_to "Português", set_locale_path(locale: :pt), class: "dropdown-item" %>
+            </li>
+            <li>
+              <%= link_to "English", set_locale_path(locale: :en), class: "dropdown-item" %>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
 </nav>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

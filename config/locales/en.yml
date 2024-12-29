@@ -1,31 +1,65 @@
-# Files in the config/locales directory are used for internationalization and
-# are automatically loaded by Rails. If you want to use locales other than
-# English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t "hello"
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t("hello") %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more about the API, please read the Rails Internationalization guide
-# at https://guides.rubyonrails.org/i18n.html.
-#
-# Be aware that YAML interprets the following case-insensitive strings as
-# booleans: `true`, `false`, `on`, `off`, `yes`, `no`. Therefore, these strings
-# must be quoted to be interpreted as strings. For example:
-#
-#     en:
-#       "yes": yup
-#       enabled: "ON"
-
 en:
+  home: "Home"
+  profile: "Profile"
+  new_post: "New Post"
+  change_password: "Change Password"
   logout: "Logout"
+  register: "Sign Up"
+  title: "Forgot your password?"
+  description: "Create a new secure password for your account"
+  new_password: "New password"
+  password_confirmation: "Confirm new password"
+  submit_button: "Change my password"
+  back_to_login: "Back to login"
+  minimum_length: "minimum characters"
+  request: "Send reset instructions"
+
+  title_edit: "Edit Profile"
+  description_edit: "Update your information"
+  password_label: "Password"
+  password_hint: "Leave blank if you don't want to change"
+  password_confirmation_label: "Confirm Password"
+  current_password_label: "Current Password"
+  current_password_hint: "We need your current password to confirm changes"
+  update_button: "Update"
+  cancel_account: "Cancel my account"
+  cancel_account_confirm: "Are you sure you want to cancel your account?"
+  back_link: "← Back"
+
+  title_create: "Create Account"
+  name_label: "Name"
+  submit_button_register: "Register"
+
+  submit_button_enter: "Enter"
+
+  title_label: "Title"
+  content_label: "Content"
+  tags_label: "Tags (separated by commas)"
+  save_button: "Save Post"
+  cancel_button: "Cancel"
+  new_post_title: "Create New Post"
+  edit_post_title: "Edit Post"
+  errors_heading: "Errors prevent this post from being saved:"
+  errors_list: 
+      - "Error saving post"
+
+  btn_edit: "Edit"
+  btn_delete: "Delete"
+  posted_by: "Posted by"
+  comments: "Comments"
+  anonimo: "Anonymous"
+  m_comment: "Make a comment"
+  comment: "Comment"
+
+  search: "Search"
+  your_search: "Enter your search..."
+  no_tag_posts: "There are no posts with this tag"
+  no_posts: "There are no posts created yet"
+  btn_first: "Click here to create the first post"
+
+  member: "Member since"
+  published: "Published Posts"
+  comments_received: "Comments Received"
+  user_comments: "User Comments"
+  my_posts: "My Posts"
+  comments: "comentários"

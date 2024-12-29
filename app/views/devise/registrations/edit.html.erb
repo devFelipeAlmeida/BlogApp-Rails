@@ -12,8 +12,8 @@
               <!-- Left side with title -->
               <div class="col-md-4 bg-primary text-white p-4 d-flex align-items-center">
                 <div class="w-100">
-                  <h1 class="display-6 mb-3">Editar Perfil</h1>
-                  <p class="lead mb-0">Atualize suas informações</p>
+                  <h1 class="display-6 mb-3"><%= t(:title_edit) %></h1>
+                  <p class="lead mb-0"><%= t(:description_edit) %></p>
                 </div>
               </div>
 
@@ -36,49 +36,44 @@
 
                   <!-- New Password Field -->
                   <div class="mb-3">
-                    <%= f.label :password, "Senha", class: 'form-label' %>
+                    <%= f.label :password, t(:password_label), class: 'form-label' %>
                     <i>(deixe em branco se não quiser alterar)</i><br />
                     <%= f.password_field :password, class: 'form-control', autocomplete: "new-password" %>
                     <% if @minimum_password_length %>
                       <div class="form-text text-muted">
-                        <em><%= @minimum_password_length %> caracteres no mínimo</em>
+                        <em><%= @minimum_password_length %> <%=t(:minimum_length)%></em>
                       </div>
                     <% end %>
                   </div>
 
                   <!-- Password Confirmation Field -->
                   <div class="mb-3">
-                    <%= f.label :password_confirmation, "Confirme sua Senha", class: 'form-label' %><br />
+                    <%= f.label :password_confirmation, t(:password_confirmation_label), class: 'form-label' %><br />
                     <%= f.password_field :password_confirmation, class: 'form-control', autocomplete: "new-password" %>
                   </div>
 
                   <!-- Current Password Field -->
                   <div class="mb-4">
-                    <%= f.label :current_password, "Senha Atual", class: 'form-label' %>
-                    <i>(precisamos da sua senha atual para confirmar as alterações)</i><br />
+                    <%= f.label :current_password, t(:current_password_label), class: 'form-label' %>
+                    <i><%= t(:current_password_hint) %></i><br />
                     <%= f.password_field :current_password, class: 'form-control', autocomplete: "current-password", required: true %>
                     <div class="form-text text-muted">
-                      Precisamos da sua senha atual para confirmar as alterações
+                      <%= t(:current_password_hint) %>
                     </div>
                   </div>
 
                   <!-- Update Button -->
                   <div class="d-grid gap-2">
-                    <%= f.submit "Atualizar", class: 'btn btn-primary' %>
+                    <%= f.submit t(:update_button), class: 'btn btn-primary' %>
                   </div>
                 <% end %>
 
                 <!-- Delete Account Section -->
                 <div class="mt-5 pt-3 border-top text-center">
-                  <h3 class="h5 mb-3">Cancelar minha conta</h3>
+                  <h3 class="h5 mb-3"><%= t(:cancel_account) %></h3>
                   <div class="d-flex align-items-center justify-content-center">
-                    <%= button_to "Cancelar minha conta", registration_path(resource_name), data: { confirm: "Tem certeza que deseja cancelar sua conta?" }, method: :delete, class: 'btn btn-danger' %>
+                    <%= button_to t(:cancel_account), registration_path(resource_name), data: { confirm: t(:cancel_account_confirm) }, method: :delete, class: 'btn btn-danger' %>
                   </div>
-                </div>
-
-                <!-- Back Link -->
-                <div class="text-center mt-4">
-                  <%= link_to "← Voltar", :back, class: 'text-decoration-none' %>
                 </div>
               </div>
             </div>

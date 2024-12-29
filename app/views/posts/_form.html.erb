@@ -3,12 +3,15 @@
     <div class="col-12 col-lg-8">
       <div class="card shadow-sm">
         <div class="card-body">
+
+          <!-- Formulário de Criação Manual -->
+          <h2 class="mb-4">Criar Post Manualmente</h2>
           <%= form_with(model: post, local: true) do |form| %>
 
             <!-- Exibição de erros -->
             <% if post.errors.any? %>
               <div class="alert alert-danger">
-                <h4 class="alert-heading">Erros impedem que este post seja salvo:</h4>
+                <h4 class="alert-heading">Erros ao salvar o post</h4>
                 <ul>
                   <% post.errors.full_messages.each do |msg| %>
                     <li><%= msg %></li>
@@ -16,11 +19,6 @@
                 </ul>
               </div>
             <% end %>
-
-            <!-- Título da Página -->
-            <h1 class="mb-4">
-              <%= @post.new_record? ? 'Criar Novo Post' : 'Editar Post' %>
-            </h1>
 
             <!-- Título do Post -->
             <div class="mb-4">
@@ -36,18 +34,55 @@
 
             <!-- Tags Selecionadas -->
             <div class="mb-4">
-              <%= form.label :tags, "Tags (separadas por vírgulas)", class: "form-label" %>
+              <%= form.label :tags, "Tags", class: "form-label" %>
               <%= form.text_field :tags, class: "form-control", placeholder: "Ex: ruby, rails, programação", 
                   value: @post.tags.map(&:name).join(", ") %>
             </div>
 
             <!-- Botões de Ação -->
             <div class="d-flex justify-content-end">
-              <%= link_to 'Cancelar', posts_path, class: 'btn btn-outline-secondary me-2' %>
-              <%= form.submit 'Salvar Post', class: 'btn btn-success' %>
+              <%= link_to "Cancelar", posts_path, class: 'btn btn-outline-secondary me-2' %>
+              <%= form.submit "Salvar Post", class: 'btn btn-success' %>
             </div>
 
           <% end %>
+
+          <hr class="my-5">
+
+          <!-- Formulário de Upload de Arquivo -->
+<h2 class="mb-4">Upload de Arquivo (TXT)</h2>
+<%= form_with url: '/uploads', method: :post, local: true, html: { multipart: true } do |f| %>
+
+  <div class="mb-3">
+    <label for="resource_type" class="form-label">Tipo de Recurso</label>
+    <%= select_tag :resource_type, 
+    options_for_select([['Posts', 'posts'], ['Tags', 'tags']]), 
+    class: "form-select", id: "resource_type" %>
+  </div>
+
+  <div class="mb-3">
+    <label for="file" class="form-label">Arquivo (TXT)</label>
+    <%= file_field_tag :file, class: "form-control", id: "file", accept: ".txt" %>
+  </div>
+
+  <div>
+    <%= submit_tag "Enviar Arquivo", class: "btn btn-primary" %>
+  </div>
+
+<% end %>
+
+<div class="mt-4">
+  <p><strong>Formato do Arquivo:</strong></p>
+  <ul>
+    <li>Para criar posts com tags, utilize o seguinte formato no arquivo .txt:</li>
+    <pre>
+Título do Post 1|Conteúdo do Post 1|tag1,tag2,tag3
+Título do Post 2|Conteúdo do Post 2|tag4,tag5
+    </pre>
+    <li>Separe os campos por `|` e as tags por `,`.</li>
+  </ul>
+</div>
+
         </div>
       </div>
     </div>

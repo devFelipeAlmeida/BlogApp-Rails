@@ -14,11 +14,11 @@
                 <%= form.text_field :search, 
                     value: params[:search], 
                     class: "form-control py-2", 
-                    placeholder: "Digite sua pesquisa...", 
-                    aria: { label: "Pesquisar" }, 
+                    placeholder: t(:your_search), 
+                    aria: { label: t(:search) }, 
                     id: "search-input",
                     autocomplete: "off" %>
-                <%= form.submit "Pesquisar", class: "btn btn-primary px-4", aria: { label: "Pesquisar" } %>
+                <%= form.submit t(:search), class: "btn btn-primary px-4", aria: { label: t(:search) } %>
               </div>
             </div>
           <% end %>
@@ -31,7 +31,7 @@
   <% if params[:search].present? && @posts.empty? %>
     <div class="d-flex justify-content-center">
       <h1 class="d-flex flex-column mt-5">
-        Não há posts com essa tag
+        <%= t(:no_tag_posts) %>
       </h1>
     </div>
   <% else %>
@@ -39,8 +39,8 @@
     <% if @posts.empty? %>
       <div class="d-flex justify-content-center">
         <h2 class="d-flex flex-column mt-5">
-          Não há posts criados ainda
-          <%= link_to 'Clique aqui para criar o primeiro post', new_post_path, class: 'btn btn-primary mt-3' %>
+          <%= t(:no_posts) %>
+          <%= link_to t(:btn_first), new_post_path, class: 'btn btn-primary mt-3' %>
         </h2>
       </div>
     <% else %>

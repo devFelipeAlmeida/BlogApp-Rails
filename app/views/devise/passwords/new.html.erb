@@ -17,8 +17,8 @@
                             <!-- Left side with welcome message -->
                             <div class="col-md-5 bg-primary text-white p-4 d-flex align-items-center">
                                 <div class="text-center w-100">
-                                    <h1 class="display-6 mb-2 fw-bold">Esqueceu sua Senha?</h1>
-                                    <p class="lead mb-0">Redefina sua senha para recuperar o acesso à sua conta</p>
+                                    <h1 class="display-6 mb-2 fw-bold"><%= t(:title) %></h1>
+                                    <p class="lead mb-0"><%= t(:description) %></p>
                                 </div>
                             </div>
 
@@ -37,10 +37,10 @@
                                   </div>
 
                                   <div class="d-grid gap-2">
-                                    <%= f.submit "Enviar instruções de redefinição  ", class: "btn btn-primary btn-lg" %>
+                                    <%= f.submit t(:request), class: "btn btn-primary btn-lg" %>
                                   </div>
                                   <div class="text-center mt-4">
-                                    <%= link_to "Volte para o login", new_session_path(resource_name), class: "text-decoration-none" %>
+                                    <%= link_to t(:back_to_login), new_session_path(resource_name), class: "text-decoration-none" %>
                                   </div>
                                 <% end %>
                             </div>
