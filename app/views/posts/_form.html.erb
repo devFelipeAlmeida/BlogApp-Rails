@@ -36,12 +36,6 @@
 
             <!-- Tags Selecionadas -->
             <div class="mb-4">
-              <%= form.label :default_tag_ids, "Escolha uma tag (pré-definida)", class: "form-label" %>
-              <%= form.select :default_tag_ids, Tag.limit(5).pluck(:name, :id), {}, class: "form-control" %>
-            </div>
-
-            <!-- Tags Personalizadas -->
-            <div class="mb-4">
               <%= form.label :tags, "Tags (separadas por vírgulas)", class: "form-label" %>
               <%= form.text_field :tags, class: "form-control", placeholder: "Ex: ruby, rails, programação", 
                   value: @post.tags.map(&:name).join(", ") %>
