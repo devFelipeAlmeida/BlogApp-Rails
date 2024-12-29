@@ -1,0 +1,94 @@
+<%= content_for :head do %>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<% end %>
+
+<body class="bg-light">
+  <div class="container-fluid vh-100">
+    <div class="row h-100 align-items-center justify-content-center">
+      <div class="col-md-8">
+        <div class="card shadow-sm mx-auto">
+          <div class="card-body p-0">
+            <div class="row g-0">
+              <!-- Left side with title -->
+              <div class="col-md-4 bg-primary text-white p-4 d-flex align-items-center">
+                <div class="w-100">
+                  <h1 class="display-6 mb-3">Editar Perfil</h1>
+                  <p class="lead mb-0">Atualize suas informações</p>
+                </div>
+              </div>
+
+              <!-- Right side with form -->
+              <div class="col-md-8 p-4">
+                <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+                  <%= render "devise/shared/error_messages", resource: resource %>
+
+                  <!-- Email Field -->
+                  <div class="mb-3">
+                    <%= f.label :email, class: 'form-label' %><br />
+                    <%= f.email_field :email, class: 'form-control', autofocus: true, autocomplete: "email" %>
+                  </div>
+
+                  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                    <div class="alert alert-info mb-3">
+                      Aguardando confirmação para: <%= resource.unconfirmed_email %>
+                    </div>
+                  <% end %>
+
+                  <!-- New Password Field -->
+                  <div class="mb-3">
+                    <%= f.label :password, "Senha", class: 'form-label' %>
+                    <i>(deixe em branco se não quiser alterar)</i><br />
+                    <%= f.password_field :password, class: 'form-control', autocomplete: "new-password" %>
+                    <% if @minimum_password_length %>
+                      <div class="form-text text-muted">
+                        <em><%= @minimum_password_length %> caracteres no mínimo</em>
+                      </div>
+                    <% end %>
+                  </div>
+
+                  <!-- Password Confirmation Field -->
+                  <div class="mb-3">
+                    <%= f.label :password_confirmation, "Confirme sua Senha", class: 'form-label' %><br />
+                    <%= f.password_field :password_confirmation, class: 'form-control', autocomplete: "new-password" %>
+                  </div>
+
+                  <!-- Current Password Field -->
+                  <div class="mb-4">
+                    <%= f.label :current_password, "Senha Atual", class: 'form-label' %>
+                    <i>(precisamos da sua senha atual para confirmar as alterações)</i><br />
+                    <%= f.password_field :current_password, class: 'form-control', autocomplete: "current-password", required: true %>
+                    <div class="form-text text-muted">
+                      Precisamos da sua senha atual para confirmar as alterações
+                    </div>
+                  </div>
+
+                  <!-- Update Button -->
+                  <div class="d-grid gap-2">
+                    <%= f.submit "Atualizar", class: 'btn btn-primary' %>
+                  </div>
+                <% end %>
+
+                <!-- Delete Account Section -->
+                <div class="mt-5 pt-3 border-top text-center">
+                  <h3 class="h5 mb-3">Cancelar minha conta</h3>
+                  <div class="d-flex align-items-center justify-content-center">
+                    <%= button_to "Cancelar minha conta", registration_path(resource_name), data: { confirm: "Tem certeza que deseja cancelar sua conta?" }, method: :delete, class: 'btn btn-danger' %>
+                  </div>
+                </div>
+
+                <!-- Back Link -->
+                <div class="text-center mt-4">
+                  <%= link_to "← Voltar", :back, class: 'text-decoration-none' %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%= content_for :scripts do %>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <% end %>
+</body>

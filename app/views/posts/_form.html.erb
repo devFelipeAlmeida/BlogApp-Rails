@@ -1,0 +1,61 @@
+<div class="container my-4">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-8">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <%= form_with(model: post, local: true) do |form| %>
+
+            <!-- Exibição de erros -->
+            <% if post.errors.any? %>
+              <div class="alert alert-danger">
+                <h4 class="alert-heading">Erros impedem que este post seja salvo:</h4>
+                <ul>
+                  <% post.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
+
+            <!-- Título da Página -->
+            <h1 class="mb-4">
+              <%= @post.new_record? ? 'Criar Novo Post' : 'Editar Post' %>
+            </h1>
+
+            <!-- Título do Post -->
+            <div class="mb-4">
+              <%= form.label :title, "Título", class: "form-label" %>
+              <%= form.text_field :title, class: "form-control form-control-lg", placeholder: "Digite o título do seu post" %>
+            </div>
+
+            <!-- Conteúdo do Post -->
+            <div class="mb-4">
+              <%= form.label :content, "Conteúdo", class: "form-label" %>
+              <%= form.text_area :content, class: "form-control", rows: 10, placeholder: "Escreva o conteúdo do seu post aqui..." %>
+            </div>
+
+            <!-- Tags Selecionadas -->
+            <div class="mb-4">
+              <%= form.label :default_tag_ids, "Escolha uma tag (pré-definida)", class: "form-label" %>
+              <%= form.select :default_tag_ids, Tag.limit(5).pluck(:name, :id), {}, class: "form-control" %>
+            </div>
+
+            <!-- Tags Personalizadas -->
+            <div class="mb-4">
+              <%= form.label :tags, "Tags (separadas por vírgulas)", class: "form-label" %>
+              <%= form.text_field :tags, class: "form-control", placeholder: "Ex: ruby, rails, programação", 
+                  value: @post.tags.map(&:name).join(", ") %>
+            </div>
+
+            <!-- Botões de Ação -->
+            <div class="d-flex justify-content-end">
+              <%= link_to 'Cancelar', posts_path, class: 'btn btn-outline-secondary me-2' %>
+              <%= form.submit 'Salvar Post', class: 'btn btn-success' %>
+            </div>
+
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

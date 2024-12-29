@@ -1,0 +1,80 @@
+<div class="container-fluid bg-light min-vh-100">
+  <!-- Header com informações do usuário -->
+  <div>
+    <div class="d-flex flex-column align-items-center justify-content-center py-4">
+      <!-- Avatar com inicial do nome -->
+      <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mb-3" style="width: 64px; height: 64px">
+        <span class="fs-3"><%= @user.name.first %></span>
+      </div>
+      <div class="text-center">
+        <h1 class="fs-3 fw-bold mb-0"><%= @user.name %></h1>
+        <p class="text-muted mb-0">Membro desde <%= @user.created_at.strftime('%d/%m/%Y') %></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Conteúdo principal -->
+  <div class="container py-4">
+    <!-- Estatísticas -->
+    <div class="card mb-4">
+      <div class="card-body">
+        <div class="row text-center">
+          <div class="col-md-4">
+            <p class="fs-3 fw-bold text-primary mb-0"><%= @posts.size %></p>
+            <p class="text-muted">Posts Publicados</p>
+          </div>
+          <div class="col-md-4">
+            <p class="fs-3 fw-bold text-primary mb-0">
+              <%= @posts.sum { |post| post.comments.count } %>
+            </p>
+            <p class="text-muted">Comentários Recebidos</p>
+          </div>
+          <div class="col-md-4">
+            <p class="fs-3 fw-bold text-primary mb-0">
+              <%= rand(100..1000) %>
+            </p>
+            <p class="text-muted">Visualizações</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lista de Posts -->
+    <h2 class="fs-4 fw-bold mb-3">Meus Posts</h2>
+    
+    <% @posts.each do |post| %>
+      <div class="card mb-3">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-start mb-3">
+            <div>
+              <h3 class="fs-5 fw-bold mb-1"><%= post.title %></h3>
+              <p class="text-muted small mb-0"><%= post.created_at.strftime('%d/%m/%Y') %></p>
+            </div>
+            <div class="d-flex gap-2">
+              <%= link_to edit_post_path(post), class: "btn btn-light btn-sm" do %>
+                <i class="bi bi-pencil"></i>
+              <% end %>
+              <%= link_to post_path(post), 
+                  method: :delete, 
+                  data: { confirm: "Tem certeza que deseja excluir este post?" }, 
+                  class: "btn btn-light btn-sm" do %>
+                <i class="bi bi-trash"></i>
+              <% end %>
+            </div>
+          </div>
+          <p class="text-secondary"><%= post.content.truncate(150) %></p>
+          <div class="d-flex align-items-center gap-3 mt-3">
+            <span class="text-muted">
+              <i class="bi bi-chat-dots me-1"></i>
+              <%= post.comments.count %> comentários
+            </span>
+            <%= link_to "Ler mais", post_path(post), class: "text-primary text-decoration-none" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+    <!-- Paginação -->
+    
+  </div>
+</div>

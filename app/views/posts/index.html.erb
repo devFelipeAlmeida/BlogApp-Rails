@@ -1,0 +1,96 @@
+<div class="container my-4" id="posts">
+  <!-- Exibição de mensagens de notificação ou alerta -->
+  <% if alert %>
+    <p id="alert" class="flash-message" style="color: red"><%= alert %></p>
+  <% end %>
+
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <%= turbo_frame_tag "posts" do %>
+          <%= form_with url: posts_path, method: :get do |form| %>
+            <div class="mb-3 d-flex justify-content-center">
+              <div class="input-group input-group-lg">
+                <%= form.text_field :search, 
+                    value: params[:search], 
+                    class: "form-control py-2", 
+                    placeholder: "Digite sua pesquisa...", 
+                    aria: { label: "Pesquisar" }, 
+                    id: "search-input",
+                    autocomplete: "off" %>
+                <%= form.submit "Pesquisar", class: "btn btn-primary px-4", aria: { label: "Pesquisar" } %>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <!-- Verificar se a pesquisa não trouxe posts -->
+  <% if params[:search].present? && @posts.empty? %>
+    <div class="d-flex justify-content-center">
+      <h1 class="d-flex flex-column mt-5">
+        Não há posts com essa tag
+      </h1>
+    </div>
+  <% else %>
+    <!-- Verificar se há posts -->
+    <% if @posts.empty? %>
+      <div class="d-flex justify-content-center">
+        <h2 class="d-flex flex-column mt-5">
+          Não há posts criados ainda
+          <%= link_to 'Clique aqui para criar o primeiro post', new_post_path, class: 'btn btn-primary mt-3' %>
+        </h2>
+      </div>
+    <% else %>
+      <div class="row">
+        <% @posts.each do |post| %>
+          <%= render partial: "post", locals: { post: post } %>  <!-- Passa o post correto para o partial -->
+        <% end %>
+
+        <%= paginate @posts %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<!-- Estilo para o efeito de "subir" -->
+<style>
+  .flash-message {
+    transition: transform 1s ease, opacity 1s ease;
+    position: relative;
+  }
+
+  .flash-message.hidden {
+    opacity: 0; /* Torna invisível */
+  }
+</style>
+
+<script>
+document.addEventListener('turbo:load', function() {
+  const form = document.querySelector('form');
+  if (form) {
+    form.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        form.requestSubmit();
+      }
+    });
+  }
+});
+</script>
+
+<!-- Script para aplicar o efeito -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const flashMessages = document.querySelectorAll('.flash-message');
+
+    flashMessages.forEach((message) => {
+      setTimeout(() => {
+        message.classList.add('hidden'); // Adiciona a classe "hidden" após 5 segundos
+
+        setTimeout(() => message.remove(), 1000); // Remove do DOM após a animação (1s)
+      }, 5000); // Aguarda 5 segundos antes de começar a animação
+    });
+  });
+</script>
