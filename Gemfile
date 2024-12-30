@@ -77,3 +77,5 @@ end
 gem "dotenv-rails", groups: [ :development, :test ]
 
 gem "sidekiq"
+
+gem 'foreman', '~> 0.88.1'
