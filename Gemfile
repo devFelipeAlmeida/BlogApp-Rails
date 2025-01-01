@@ -57,10 +57,6 @@ group :test do
   gem "shoulda-matchers", "~> 5.0"
 end
 
-gem "bootstrap", "~> 5.3", ">= 5.3.3"
-
-gem "sassc-rails", "~> 2.1", ">= 2.1.2"
-
 gem "devise"
 
 gem "kaminari"
