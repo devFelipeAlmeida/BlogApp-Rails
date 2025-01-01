@@ -1,0 +1,29 @@
+# fly.toml app configuration file for blogapp-rails
+
+app = "blogapp-rails"
+primary_region = "gru"
+console_command = "/rails/bin/rails console"
+
+[build]
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
+
+[[vm]]
+  memory = "1gb"
+  cpu_kind = "shared"
+  cpus = 1
+
+[processes]
+app = "bundle exec puma -C config/puma.rb"
+worker = "bundle exec sidekiq"
+
+[mounts]
+# Montagem para persistência de dados
+source = "app_data"
+destination = "/rails/tmp"

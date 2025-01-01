@@ -6,9 +6,9 @@ class UploadsController < ApplicationController
     resource_type = params[:resource_type] # 'posts', 'tags', 'combined'
 
     # Verificar se o arquivo foi enviado e se o tipo de recurso é válido
-    if file && file.content_type == "text/plain" && %w[posts tags combined].include?(resource_type)
+    if file.present? && file.content_type == "text/plain" && %w[posts tags combined].include?(resource_type)
       file_path = Rails.root.join("tmp", file.original_filename)
-      
+
       # Salvar o arquivo temporariamente
       File.open(file_path, "wb") { |f| f.write(file.read) }
 
