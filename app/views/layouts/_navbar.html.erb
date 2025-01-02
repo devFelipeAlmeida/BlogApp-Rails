@@ -10,9 +10,9 @@
           <%= link_to t("navbar.home"), root_path, class: "nav-link active" %>
         </li>
         <% if user_signed_in? %>
-        <li class="nav-item">
-          <%= link_to t("navbar.profile"), user_path(current_user), class: "nav-link active" %>
-        </li>
+          <li class="nav-item">
+            <%= link_to t("navbar.profile"), user_path(current_user), class: "nav-link active" %>
+          </li>
         <% end %>
       </ul>
       <div class="d-flex">
@@ -25,21 +25,24 @@
           <%= link_to t("navbar.register"), new_user_registration_path, class: "btn btn-primary me-2" %>
         <% end %>
 
-        <!-- Dropdown de idioma -->
         <div class="dropdown">
           <a class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
             <% if I18n.locale == :pt %>
-              <img width="20" height="20" src="https://img.icons8.com/fluency/48/brazil-circular.png" alt="brasil-circular"/>
+              <img src="<%= image_path('brazil.png') %>" alt="Português" style="width: 20px; height: auto;"> <%= t("navbar.ptbr") %>
             <% else %>
-              <img width="20" height="20" src="https://img.icons8.com/fluency/48/usa-circular.png" alt="usa-circular"/>
+              <img src="<%= image_path('united-states.png') %>" alt="Inglês" style="width: 20px; height: auto;"> <%= t("navbar.english") %>
             <% end %>
           </a>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <li>
-              <%= link_to image_tag("https://img.icons8.com/fluency/48/brazil-circular.png", alt: "Brazil"), set_locale_path(locale: :pt), class: "dropdown-item" %>
+              <%= link_to set_locale_path(locale: :pt), class: "dropdown-item" do %>
+                <img src="<%= image_path('brazil.png') %>" alt="Português" style="width: 20px; height: auto;"> <%= t("navbar.ptbr") %>
+              <% end %>
             </li>
             <li>
-              <%= link_to image_tag("https://img.icons8.com/fluency/48/usa-circular.png", alt: "USA"), set_locale_path(locale: :en), class: "dropdown-item" %>
+              <%= link_to set_locale_path(locale: :en), class: "dropdown-item" do %>
+                <img src="<%= image_path('united-states.png') %>" alt="Inglês" style="width: 20px; height: auto;"> <%= t("navbar.english") %>
+              <% end %>
             </li>
           </ul>
         </div>

@@ -63587,3 +63587,1490 @@ ActionController::RoutingError (No route matches [GET] "/_/c7d11060.js"):
   
 ActionController::RoutingError (No route matches [GET] "/assets/modifiers/index.js"):
   
+Started GET "/" for ::1 at 2025-01-02 12:09:49 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:32
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:41
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  [1m[36mTag Exists? (2.4ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = $1 LIMIT $2[0m  [["post_id", 15], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:25
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = $1[0m  [["post_id", 15]]
+  ↳ app/views/posts/_post.html.erb:29
+  [1m[36mComment Exists? (2.3ms)[0m  [1m[34mSELECT 1 AS one FROM "comments" WHERE "comments"."post_id" = $1 LIMIT $2[0m  [["post_id", 15], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:41
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 15]]
+  ↳ app/views/posts/_post.html.erb:43
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:46
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:46
+  Rendered posts/_post.html.erb (Duration: 87.4ms | GC: 0.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  [1m[36mTag Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = $1 LIMIT $2[0m  [["post_id", 13], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:25
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = $1[0m  [["post_id", 13]]
+  ↳ app/views/posts/_post.html.erb:29
+  [1m[36mComment Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "comments" WHERE "comments"."post_id" = $1 LIMIT $2[0m  [["post_id", 13], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:41
+  Rendered posts/_post.html.erb (Duration: 12.6ms | GC: 0.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  [1m[36mTag Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = $1 LIMIT $2[0m  [["post_id", 12], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:25
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = $1[0m  [["post_id", 12]]
+  ↳ app/views/posts/_post.html.erb:29
+  [1m[36mComment Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "comments" WHERE "comments"."post_id" = $1 LIMIT $2[0m  [["post_id", 12], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:41
+  Rendered posts/_post.html.erb (Duration: 12.2ms | GC: 0.0ms)
+  [1m[36mPost Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:45
+  Rendered posts/index.html.erb within layouts/application (Duration: 566.8ms | GC: 0.9ms)
+  Rendered layouts/_navbar.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 639.1ms | GC: 0.9ms)
+Completed 200 OK in 852ms (Views: 621.1ms | ActiveRecord: 41.2ms (19 queries, 4 cached) | GC: 1.3ms)
+
+
+Started GET "/_/a0ba12d2.js" for ::1 at 2025-01-02 12:09:50 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/assets/enums.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/_/a0ba12d2.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/index.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/popper-lite.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/popper.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/applyStyles.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/arrow.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/computeStyles.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/flip.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/eventListeners.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/hide.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/offset.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/popperOffsets.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getCompositeRect.js"):
+  
+Started GET "/_/7a91f8b9.js" for ::1 at 2025-01-02 12:09:52 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/preventOverflow.js"):
+  
+Started GET "/_/7742d4ca.js" for ::1 at 2025-01-02 12:09:52 -0300
+Started GET "/_/b8df2d1e.js" for ::1 at 2025-01-02 12:09:52 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/_/7a91f8b9.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/instanceOf.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getWindow.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/_/7742d4ca.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/_/b8df2d1e.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getNodeScroll.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getWindowScroll.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getHTMLElementScroll.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getNodeName.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getWindowScrollBarX.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getDocumentElement.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/isScrollParent.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getComputedStyle.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getLayoutRect.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/listScrollParents.js"):
+  
+Started GET "/_/084d303b.js" for ::1 at 2025-01-02 12:09:55 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getScrollParent.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getParentNode.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getOffsetParent.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/_/084d303b.js"):
+  
+Started GET "/_/a9ca29ce.js" for ::1 at 2025-01-02 12:09:55 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getViewportRect.js"):
+  
+Started GET "/_/bb24ce41.js" for ::1 at 2025-01-02 12:09:56 -0300
+Started GET "/_/2d19854a.js" for ::1 at 2025-01-02 12:09:56 -0300
+Started GET "/_/c7d11060.js" for ::1 at 2025-01-02 12:09:56 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getDocumentRect.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/_/a9ca29ce.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/_/bb24ce41.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/_/2d19854a.js"):
+  
+Started GET "/_/1ba79728.js" for ::1 at 2025-01-02 12:09:56 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/_/c7d11060.js"):
+  
+Started GET "/_/6a201025.js" for ::1 at 2025-01-02 12:09:56 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/assets/utils/getMainAxisFromPlacement.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/_/1ba79728.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/_/6a201025.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/utils/getOppositePlacement.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/utils/getOppositeVariationPlacement.js"):
+  
+Started GET "/manifest.json" for ::1 at 2025-01-02 12:09:57 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/assets/utils/detectOverflow.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/utils/computeAutoPlacement.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/" for ::1 at 2025-01-02 12:15:28 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:32
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:41
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  [1m[36mTag Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = $1 LIMIT $2[0m  [["post_id", 15], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:25
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = $1[0m  [["post_id", 15]]
+  ↳ app/views/posts/_post.html.erb:29
+  [1m[36mComment Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "comments" WHERE "comments"."post_id" = $1 LIMIT $2[0m  [["post_id", 15], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:41
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 15]]
+  ↳ app/views/posts/_post.html.erb:43
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:46
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:46
+  Rendered posts/_post.html.erb (Duration: 90.3ms | GC: 0.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  [1m[36mTag Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = $1 LIMIT $2[0m  [["post_id", 13], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:25
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = $1[0m  [["post_id", 13]]
+  ↳ app/views/posts/_post.html.erb:29
+  [1m[36mComment Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "comments" WHERE "comments"."post_id" = $1 LIMIT $2[0m  [["post_id", 13], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:41
+  Rendered posts/_post.html.erb (Duration: 12.1ms | GC: 0.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  [1m[36mTag Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = $1 LIMIT $2[0m  [["post_id", 12], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:25
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = $1[0m  [["post_id", 12]]
+  ↳ app/views/posts/_post.html.erb:29
+  [1m[36mComment Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "comments" WHERE "comments"."post_id" = $1 LIMIT $2[0m  [["post_id", 12], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:41
+  Rendered posts/_post.html.erb (Duration: 11.0ms | GC: 0.0ms)
+  [1m[36mPost Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:45
+  Rendered posts/index.html.erb within layouts/application (Duration: 530.1ms | GC: 0.3ms)
+  Rendered layouts/_navbar.html.erb (Duration: 2.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 768.0ms | GC: 0.5ms)
+Completed 200 OK in 931ms (Views: 753.6ms | ActiveRecord: 32.1ms (19 queries, 4 cached) | GC: 0.5ms)
+
+
+Started GET "/_/a0ba12d2.js" for ::1 at 2025-01-02 12:15:29 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/_/a0ba12d2.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/index.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/enums.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/popper.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/utils/detectOverflow.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/arrow.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/computeStyles.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/applyStyles.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/eventListeners.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/flip.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/hide.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/offset.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/popperOffsets.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/preventOverflow.js"):
+  
+Started GET "/_/7a91f8b9.js" for ::1 at 2025-01-02 12:15:32 -0300
+Started GET "/_/7742d4ca.js" for ::1 at 2025-01-02 12:15:32 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getCompositeRect.js"):
+  
+Started GET "/_/b8df2d1e.js" for ::1 at 2025-01-02 12:15:32 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/_/7a91f8b9.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/instanceOf.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getWindow.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/_/7742d4ca.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/_/b8df2d1e.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getNodeScroll.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getWindowScroll.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getHTMLElementScroll.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getNodeName.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getWindowScrollBarX.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getDocumentElement.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/isScrollParent.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getComputedStyle.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getLayoutRect.js"):
+  
+Started GET "/_/084d303b.js" for ::1 at 2025-01-02 12:15:34 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/listScrollParents.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getScrollParent.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getParentNode.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/_/084d303b.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getOffsetParent.js"):
+  
+Started GET "/_/a9ca29ce.js" for ::1 at 2025-01-02 12:15:35 -0300
+Started GET "/_/bb24ce41.js" for ::1 at 2025-01-02 12:15:35 -0300
+Started GET "/_/2d19854a.js" for ::1 at 2025-01-02 12:15:35 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getViewportRect.js"):
+  
+Started GET "/_/c7d11060.js" for ::1 at 2025-01-02 12:15:35 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getDocumentRect.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/_/a9ca29ce.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/_/bb24ce41.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/_/2d19854a.js"):
+  
+Started GET "/_/1ba79728.js" for ::1 at 2025-01-02 12:15:35 -0300
+Started GET "/_/6a201025.js" for ::1 at 2025-01-02 12:15:36 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/_/c7d11060.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/utils/getMainAxisFromPlacement.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/_/1ba79728.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/_/6a201025.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/utils/getOppositePlacement.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/popper-lite.js"):
+  
+Started GET "/manifest.json" for ::1 at 2025-01-02 12:15:36 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/assets/utils/computeAutoPlacement.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/utils/getOppositeVariationPlacement.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/" for ::1 at 2025-01-02 12:17:33 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:32
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:41
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  [1m[36mTag Exists? (2.3ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = $1 LIMIT $2[0m  [["post_id", 15], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:25
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = $1[0m  [["post_id", 15]]
+  ↳ app/views/posts/_post.html.erb:29
+  [1m[36mComment Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "comments" WHERE "comments"."post_id" = $1 LIMIT $2[0m  [["post_id", 15], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:41
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 15]]
+  ↳ app/views/posts/_post.html.erb:43
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:46
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:46
+  Rendered posts/_post.html.erb (Duration: 86.4ms | GC: 0.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  [1m[36mTag Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = $1 LIMIT $2[0m  [["post_id", 13], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:25
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = $1[0m  [["post_id", 13]]
+  ↳ app/views/posts/_post.html.erb:29
+  [1m[36mComment Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "comments" WHERE "comments"."post_id" = $1 LIMIT $2[0m  [["post_id", 13], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:41
+  Rendered posts/_post.html.erb (Duration: 30.6ms | GC: 0.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  [1m[36mTag Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = $1 LIMIT $2[0m  [["post_id", 12], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:25
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = $1[0m  [["post_id", 12]]
+  ↳ app/views/posts/_post.html.erb:29
+  [1m[36mComment Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "comments" WHERE "comments"."post_id" = $1 LIMIT $2[0m  [["post_id", 12], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:41
+  Rendered posts/_post.html.erb (Duration: 14.0ms | GC: 0.0ms)
+  [1m[36mPost Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:45
+  Rendered posts/index.html.erb within layouts/application (Duration: 531.1ms | GC: 0.6ms)
+  Rendered layouts/_navbar.html.erb (Duration: 4.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 674.1ms | GC: 0.8ms)
+Completed 200 OK in 866ms (Views: 661.6ms | ActiveRecord: 31.1ms (19 queries, 4 cached) | GC: 0.8ms)
+
+
+Started GET "/_/a0ba12d2.js" for ::1 at 2025-01-02 12:17:34 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/_/a0ba12d2.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/index.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/enums.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/popper-lite.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/popper.js"):
+  
+Started GET "/" for ::1 at 2025-01-02 12:17:35 -0300
+Processing by PostsController#index as HTML
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/applyStyles.js"):
+  
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/eventListeners.js"):
+  
+  [1m[36mPost Exists? (28.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:32
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/arrow.js"):
+  
+  [1m[36mPost Load (25.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:41
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/computeStyles.js"):
+  
+  [1m[36mTag Exists? (27.9ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = $1 LIMIT $2[0m  [["post_id", 15], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:25
+  [1m[36mTag Load (2.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = $1[0m  [["post_id", 15]]
+  ↳ app/views/posts/_post.html.erb:29
+  [1m[36mComment Exists? (5.2ms)[0m  [1m[34mSELECT 1 AS one FROM "comments" WHERE "comments"."post_id" = $1 LIMIT $2[0m  [["post_id", 15], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:41
+  [1m[36mComment Load (3.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 15]]
+  ↳ app/views/posts/_post.html.erb:43
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:46
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:46
+  Rendered posts/_post.html.erb (Duration: 82.5ms | GC: 0.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  [1m[36mTag Exists? (9.2ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = $1 LIMIT $2[0m  [["post_id", 13], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:25
+  [1m[36mTag Load (7.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = $1[0m  [["post_id", 13]]
+  ↳ app/views/posts/_post.html.erb:29
+  [1m[36mComment Exists? (12.3ms)[0m  [1m[34mSELECT 1 AS one FROM "comments" WHERE "comments"."post_id" = $1 LIMIT $2[0m  [["post_id", 13], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:41
+  Rendered posts/_post.html.erb (Duration: 50.2ms | GC: 0.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  [1m[36mTag Exists? (10.4ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = $1 LIMIT $2[0m  [["post_id", 12], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:25
+  [1m[36mTag Load (23.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = $1[0m  [["post_id", 12]]
+  ↳ app/views/posts/_post.html.erb:29
+  [1m[36mComment Exists? (9.7ms)[0m  [1m[34mSELECT 1 AS one FROM "comments" WHERE "comments"."post_id" = $1 LIMIT $2[0m  [["post_id", 12], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:41
+  Rendered posts/_post.html.erb (Duration: 126.1ms | GC: 0.6ms)
+  [1m[36mPost Count (3.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:45
+  Rendered posts/index.html.erb within layouts/application (Duration: 331.4ms | GC: 0.8ms)
+  Rendered layouts/_navbar.html.erb (Duration: 14.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 374.1ms | GC: 0.8ms)
+Completed 200 OK in 409ms (Views: 202.6ms | ActiveRecord: 172.2ms (19 queries, 4 cached) | GC: 0.8ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/hide.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/utils/detectOverflow.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/offset.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/flip.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/popperOffsets.js"):
+  
+Started GET "/_/7a91f8b9.js" for ::1 at 2025-01-02 12:17:37 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/_/7a91f8b9.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/preventOverflow.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getHTMLElementScroll.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getCompositeRect.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getNodeName.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getWindowScrollBarX.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getDocumentElement.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getComputedStyle.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getOffsetParent.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/utils/computeAutoPlacement.js"):
+  
+Started GET "/_/a0ba12d2.js" for ::1 at 2025-01-02 12:17:38 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/index.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/utils/detectOverflow.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/enums.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/_/a0ba12d2.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/applyStyles.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/computeStyles.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/eventListeners.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/hide.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/flip.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/offset.js"):
+  
+Started GET "/_/7a91f8b9.js" for ::1 at 2025-01-02 12:17:40 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getCompositeRect.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/popperOffsets.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/preventOverflow.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/_/7a91f8b9.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/instanceOf.js"):
+  
+Started GET "/_/7742d4ca.js" for ::1 at 2025-01-02 12:17:41 -0300
+Started GET "/_/b8df2d1e.js" for ::1 at 2025-01-02 12:17:41 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/_/b8df2d1e.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/_/7742d4ca.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getWindow.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getNodeScroll.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getWindowScroll.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getHTMLElementScroll.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getNodeName.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getWindowScrollBarX.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getDocumentElement.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/isScrollParent.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getComputedStyle.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getLayoutRect.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/listScrollParents.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getScrollParent.js"):
+  
+Started GET "/_/084d303b.js" for ::1 at 2025-01-02 12:17:43 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getParentNode.js"):
+  
+Started GET "/_/a9ca29ce.js" for ::1 at 2025-01-02 12:17:43 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getOffsetParent.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/_/084d303b.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getViewportRect.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getDocumentRect.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/_/a9ca29ce.js"):
+  
+Started GET "/_/2d19854a.js" for ::1 at 2025-01-02 12:17:43 -0300
+Started GET "/_/bb24ce41.js" for ::1 at 2025-01-02 12:17:43 -0300
+Started GET "/_/c7d11060.js" for ::1 at 2025-01-02 12:17:44 -0300
+Started GET "/_/1ba79728.js" for ::1 at 2025-01-02 12:17:44 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/_/bb24ce41.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/_/2d19854a.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/_/c7d11060.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/utils/getMainAxisFromPlacement.js"):
+  
+Started GET "/_/6a201025.js" for ::1 at 2025-01-02 12:17:44 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/_/1ba79728.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/_/6a201025.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/utils/getOppositePlacement.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/utils/getOppositeVariationPlacement.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/utils/computeAutoPlacement.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/popper.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/popper-lite.js"):
+  
+Started GET "/manifest.json" for ::1 at 2025-01-02 12:17:45 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/arrow.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/" for ::1 at 2025-01-02 12:19:04 -0300
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:32
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:41
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  [1m[36mTag Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = $1 LIMIT $2[0m  [["post_id", 15], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:25
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = $1[0m  [["post_id", 15]]
+  ↳ app/views/posts/_post.html.erb:29
+  [1m[36mComment Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "comments" WHERE "comments"."post_id" = $1 LIMIT $2[0m  [["post_id", 15], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:41
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 15]]
+  ↳ app/views/posts/_post.html.erb:43
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:46
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:46
+  Rendered posts/_post.html.erb (Duration: 45.7ms | GC: 0.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  [1m[36mTag Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = $1 LIMIT $2[0m  [["post_id", 13], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:25
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = $1[0m  [["post_id", 13]]
+  ↳ app/views/posts/_post.html.erb:29
+  [1m[36mComment Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "comments" WHERE "comments"."post_id" = $1 LIMIT $2[0m  [["post_id", 13], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:41
+  Rendered posts/_post.html.erb (Duration: 13.4ms | GC: 0.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  [1m[36mTag Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = $1 LIMIT $2[0m  [["post_id", 12], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:25
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = $1[0m  [["post_id", 12]]
+  ↳ app/views/posts/_post.html.erb:29
+  [1m[36mComment Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "comments" WHERE "comments"."post_id" = $1 LIMIT $2[0m  [["post_id", 12], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:41
+  Rendered posts/_post.html.erb (Duration: 11.4ms | GC: 0.0ms)
+  [1m[36mPost Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:45
+  Rendered posts/index.html.erb within layouts/application (Duration: 87.6ms | GC: 0.0ms)
+  Rendered layouts/_navbar.html.erb (Duration: 3.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 116.9ms | GC: 0.0ms)
+Completed 200 OK in 133ms (Views: 109.0ms | ActiveRecord: 14.0ms (19 queries, 4 cached) | GC: 0.0ms)
+
+
+Started GET "/_/a0ba12d2.js" for ::1 at 2025-01-02 12:19:05 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/_/a0ba12d2.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/index.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/enums.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/popper.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/utils/detectOverflow.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/applyStyles.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/arrow.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/eventListeners.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/computeStyles.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/flip.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/hide.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/offset.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/popperOffsets.js"):
+  
+Started GET "/_/7a91f8b9.js" for ::1 at 2025-01-02 12:19:07 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/preventOverflow.js"):
+  
+Started GET "/_/7742d4ca.js" for ::1 at 2025-01-02 12:19:07 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getCompositeRect.js"):
+  
+Started GET "/_/b8df2d1e.js" for ::1 at 2025-01-02 12:19:07 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/_/7a91f8b9.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/instanceOf.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getWindow.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/_/7742d4ca.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/_/b8df2d1e.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getNodeScroll.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getWindowScroll.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getHTMLElementScroll.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getNodeName.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getWindowScrollBarX.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/isScrollParent.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getDocumentElement.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getComputedStyle.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getLayoutRect.js"):
+  
+Started GET "/_/084d303b.js" for ::1 at 2025-01-02 12:19:09 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/listScrollParents.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getScrollParent.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getParentNode.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/_/084d303b.js"):
+  
+Started GET "/_/a9ca29ce.js" for ::1 at 2025-01-02 12:19:10 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getOffsetParent.js"):
+  
+Started GET "/_/bb24ce41.js" for ::1 at 2025-01-02 12:19:10 -0300
+Started GET "/_/2d19854a.js" for ::1 at 2025-01-02 12:19:10 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getViewportRect.js"):
+  
+Started GET "/_/c7d11060.js" for ::1 at 2025-01-02 12:19:10 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/_/a9ca29ce.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getDocumentRect.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/_/bb24ce41.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/_/2d19854a.js"):
+  
+Started GET "/_/1ba79728.js" for ::1 at 2025-01-02 12:19:10 -0300
+Started GET "/_/6a201025.js" for ::1 at 2025-01-02 12:19:10 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/_/c7d11060.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/utils/getMainAxisFromPlacement.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/_/1ba79728.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/_/6a201025.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/utils/getOppositePlacement.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/popper-lite.js"):
+  
+Started GET "/manifest.json" for ::1 at 2025-01-02 12:19:11 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/assets/utils/computeAutoPlacement.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/utils/getOppositeVariationPlacement.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/set_locale/en" for ::1 at 2025-01-02 12:19:13 -0300
+Processing by ApplicationController#set_locale as HTML
+  Parameters: {"locale"=>"en"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-01-02 12:19:13 -0300
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:32
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:41
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  [1m[36mTag Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = $1 LIMIT $2[0m  [["post_id", 15], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:25
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = $1[0m  [["post_id", 15]]
+  ↳ app/views/posts/_post.html.erb:29
+  [1m[36mComment Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "comments" WHERE "comments"."post_id" = $1 LIMIT $2[0m  [["post_id", 15], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:41
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 15]]
+  ↳ app/views/posts/_post.html.erb:43
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:46
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:46
+  Rendered posts/_post.html.erb (Duration: 21.1ms | GC: 0.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  [1m[36mTag Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = $1 LIMIT $2[0m  [["post_id", 13], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:25
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = $1[0m  [["post_id", 13]]
+  ↳ app/views/posts/_post.html.erb:29
+  [1m[36mComment Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "comments" WHERE "comments"."post_id" = $1 LIMIT $2[0m  [["post_id", 13], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:41
+  Rendered posts/_post.html.erb (Duration: 10.7ms | GC: 0.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  [1m[36mTag Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = $1 LIMIT $2[0m  [["post_id", 12], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:25
+  [1m[36mTag Load (1.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = $1[0m  [["post_id", 12]]
+  ↳ app/views/posts/_post.html.erb:29
+  [1m[36mComment Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "comments" WHERE "comments"."post_id" = $1 LIMIT $2[0m  [["post_id", 12], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:41
+  Rendered posts/_post.html.erb (Duration: 11.8ms | GC: 0.0ms)
+  [1m[36mPost Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:45
+  Rendered posts/index.html.erb within layouts/application (Duration: 52.4ms | GC: 0.0ms)
+  Rendered layouts/_navbar.html.erb (Duration: 2.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 58.3ms | GC: 0.0ms)
+Completed 200 OK in 62ms (Views: 54.2ms | ActiveRecord: 4.6ms (19 queries, 4 cached) | GC: 0.0ms)
+
+
+Started GET "/_/a0ba12d2.js" for ::1 at 2025-01-02 12:19:13 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/_/a0ba12d2.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/utils/detectOverflow.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/popper-lite.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/enums.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/popper.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/applyStyles.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/arrow.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/computeStyles.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/flip.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/eventListeners.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/hide.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/offset.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/popperOffsets.js"):
+  
+Started GET "/_/7a91f8b9.js" for ::1 at 2025-01-02 12:19:15 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/preventOverflow.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getCompositeRect.js"):
+  
+Started GET "/set_locale/pt" for ::1 at 2025-01-02 12:19:15 -0300
+Started GET "/_/7742d4ca.js" for ::1 at 2025-01-02 12:19:15 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/_/7a91f8b9.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/instanceOf.js"):
+  
+Processing by ApplicationController#set_locale as HTML
+  Parameters: {"locale"=>"pt"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/_/b8df2d1e.js" for ::1 at 2025-01-02 12:19:16 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/_/7742d4ca.js"):
+  
+Started GET "/" for ::1 at 2025-01-02 12:19:16 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getWindow.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/_/b8df2d1e.js"):
+  
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Exists? (4.6ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:32
+  [1m[36mPost Load (11.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:41
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getNodeScroll.js"):
+  
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  [1m[36mTag Exists? (4.7ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = $1 LIMIT $2[0m  [["post_id", 15], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:25
+  [1m[36mTag Load (1.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = $1[0m  [["post_id", 15]]
+  ↳ app/views/posts/_post.html.erb:29
+  [1m[36mComment Exists? (3.7ms)[0m  [1m[34mSELECT 1 AS one FROM "comments" WHERE "comments"."post_id" = $1 LIMIT $2[0m  [["post_id", 15], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:41
+  [1m[36mComment Load (1.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 15]]
+  ↳ app/views/posts/_post.html.erb:43
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:46
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:46
+  Rendered posts/_post.html.erb (Duration: 79.6ms | GC: 0.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  [1m[36mTag Exists? (8.3ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = $1 LIMIT $2[0m  [["post_id", 13], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:25
+  [1m[36mTag Load (2.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = $1[0m  [["post_id", 13]]
+  ↳ app/views/posts/_post.html.erb:29
+  [1m[36mComment Exists? (7.2ms)[0m  [1m[34mSELECT 1 AS one FROM "comments" WHERE "comments"."post_id" = $1 LIMIT $2[0m  [["post_id", 13], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:41
+  Rendered posts/_post.html.erb (Duration: 35.0ms | GC: 0.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  [1m[36mTag Exists? (8.5ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = $1 LIMIT $2[0m  [["post_id", 12], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:25
+  [1m[36mTag Load (3.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = $1[0m  [["post_id", 12]]
+  ↳ app/views/posts/_post.html.erb:29
+  [1m[36mComment Exists? (3.4ms)[0m  [1m[34mSELECT 1 AS one FROM "comments" WHERE "comments"."post_id" = $1 LIMIT $2[0m  [["post_id", 12], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:41
+  Rendered posts/_post.html.erb (Duration: 36.4ms | GC: 0.2ms)
+  [1m[36mPost Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:45
+  Rendered posts/index.html.erb within layouts/application (Duration: 186.3ms | GC: 0.2ms)
+  Rendered layouts/_navbar.html.erb (Duration: 10.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 219.1ms | GC: 0.2ms)
+Completed 200 OK in 225ms (Views: 156.0ms | ActiveRecord: 64.3ms (19 queries, 4 cached) | GC: 0.2ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getHTMLElementScroll.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getWindowScroll.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getNodeName.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getWindowScrollBarX.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/index.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getDocumentElement.js"):
+  
+Started GET "/_/084d303b.js" for ::1 at 2025-01-02 12:19:17 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/isScrollParent.js"):
+  
+Started GET "/_/c7d11060.js" for ::1 at 2025-01-02 12:19:18 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getParentNode.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/_/084d303b.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getOffsetParent.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/_/c7d11060.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/enums.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/index.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getNodeScroll.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getWindowScroll.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getHTMLElementScroll.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getWindowScrollBarX.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getDocumentElement.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/isScrollParent.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getComputedStyle.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getLayoutRect.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/listScrollParents.js"):
+  
+Started GET "/_/084d303b.js" for ::1 at 2025-01-02 12:19:20 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getScrollParent.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getParentNode.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getOffsetParent.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/_/084d303b.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getViewportRect.js"):
+  
+Started GET "/_/a9ca29ce.js" for ::1 at 2025-01-02 12:19:20 -0300
+Started GET "/_/bb24ce41.js" for ::1 at 2025-01-02 12:19:20 -0300
+Started GET "/_/2d19854a.js" for ::1 at 2025-01-02 12:19:20 -0300
+Started GET "/_/c7d11060.js" for ::1 at 2025-01-02 12:19:20 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/_/a9ca29ce.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getDocumentRect.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/_/bb24ce41.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/_/2d19854a.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/_/c7d11060.js"):
+  
+Started GET "/_/1ba79728.js" for ::1 at 2025-01-02 12:19:21 -0300
+Started GET "/_/6a201025.js" for ::1 at 2025-01-02 12:19:21 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/_/1ba79728.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/_/6a201025.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/utils/getMainAxisFromPlacement.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/utils/getOppositePlacement.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/utils/getOppositeVariationPlacement.js"):
+  
+Started GET "/_/a0ba12d2.js" for ::1 at 2025-01-02 12:19:23 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/_/a0ba12d2.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/utils/computeAutoPlacement.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/utils/detectOverflow.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/popper.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/popper-lite.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/applyStyles.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/eventListeners.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/arrow.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/computeStyles.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/flip.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/hide.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/preventOverflow.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/offset.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/popperOffsets.js"):
+  
+Started GET "/_/7a91f8b9.js" for ::1 at 2025-01-02 12:19:25 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getCompositeRect.js"):
+  
+Started GET "/_/7742d4ca.js" for ::1 at 2025-01-02 12:19:25 -0300
+Started GET "/_/b8df2d1e.js" for ::1 at 2025-01-02 12:19:26 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/_/7a91f8b9.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/_/7742d4ca.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/_/b8df2d1e.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getWindow.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/instanceOf.js"):
+  
+Started GET "/manifest.json" for ::1 at 2025-01-02 12:19:27 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getNodeName.js"):
+  
+Started GET "/" for ::1 at 2025-01-02 12:20:24 -0300
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:32
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:41
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  [1m[36mTag Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = $1 LIMIT $2[0m  [["post_id", 15], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:25
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = $1[0m  [["post_id", 15]]
+  ↳ app/views/posts/_post.html.erb:29
+  [1m[36mComment Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "comments" WHERE "comments"."post_id" = $1 LIMIT $2[0m  [["post_id", 15], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:41
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 15]]
+  ↳ app/views/posts/_post.html.erb:43
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:46
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:46
+  Rendered posts/_post.html.erb (Duration: 48.1ms | GC: 0.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  [1m[36mTag Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = $1 LIMIT $2[0m  [["post_id", 13], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:25
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = $1[0m  [["post_id", 13]]
+  ↳ app/views/posts/_post.html.erb:29
+  [1m[36mComment Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "comments" WHERE "comments"."post_id" = $1 LIMIT $2[0m  [["post_id", 13], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:41
+  Rendered posts/_post.html.erb (Duration: 11.2ms | GC: 0.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:11
+  [1m[36mTag Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = $1 LIMIT $2[0m  [["post_id", 12], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:25
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = $1[0m  [["post_id", 12]]
+  ↳ app/views/posts/_post.html.erb:29
+  [1m[36mComment Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "comments" WHERE "comments"."post_id" = $1 LIMIT $2[0m  [["post_id", 12], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:41
+  Rendered posts/_post.html.erb (Duration: 9.5ms | GC: 0.0ms)
+  [1m[36mPost Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:45
+  Rendered posts/index.html.erb within layouts/application (Duration: 85.5ms | GC: 0.0ms)
+  Rendered layouts/_navbar.html.erb (Duration: 3.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 160.9ms | GC: 0.0ms)
+Completed 200 OK in 176ms (Views: 154.5ms | ActiveRecord: 12.6ms (19 queries, 4 cached) | GC: 0.0ms)
+
+
+Started GET "/_/a0ba12d2.js" for ::1 at 2025-01-02 12:20:24 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/_/a0ba12d2.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/utils/detectOverflow.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/enums.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/popper.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/popper-lite.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/applyStyles.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/arrow.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/computeStyles.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/flip.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/eventListeners.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/hide.js"):
+  
+Started GET "/_/7a91f8b9.js" for ::1 at 2025-01-02 12:20:26 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/offset.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/popperOffsets.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getCompositeRect.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/preventOverflow.js"):
+  
+Started GET "/_/7742d4ca.js" for ::1 at 2025-01-02 12:20:27 -0300
+Started GET "/_/b8df2d1e.js" for ::1 at 2025-01-02 12:20:27 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/_/7a91f8b9.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/instanceOf.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getWindow.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/_/7742d4ca.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/_/b8df2d1e.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getNodeScroll.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getWindowScroll.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getHTMLElementScroll.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getNodeName.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getWindowScrollBarX.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getDocumentElement.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/isScrollParent.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getComputedStyle.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getLayoutRect.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/listScrollParents.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getScrollParent.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getOffsetParent.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/dom-utils/getParentNode.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/modifiers/index.js"):
+  

@@ -6,6 +6,8 @@ pt:
     change_password: "Alterar Senha"
     logout: "Sair"
     register: "Cadastrar"
+    ptbr: "Português"
+    english: "Inglês"
 
   forgot_password:
     title: "Esqueceu a senha?"

@@ -6,6 +6,8 @@ en:
     change_password: "Change Password"
     logout: "Logout"
     register: "Register"
+    ptbr: "Portuguese"
+    english: "English"
 
   forgot_password:
     title: "Forgot your password?"
