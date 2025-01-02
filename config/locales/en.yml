@@ -1,65 +1,167 @@
 en:
-  home: "Home"
-  profile: "Profile"
-  new_post: "New Post"
-  change_password: "Change Password"
-  logout: "Logout"
-  register: "Sign Up"
-  title: "Forgot your password?"
-  description: "Create a new secure password for your account"
-  new_password: "New password"
-  password_confirmation: "Confirm new password"
-  submit_button: "Change my password"
-  back_to_login: "Back to login"
-  minimum_length: "minimum characters"
-  request: "Send reset instructions"
+  navbar:
+    home: "Home"
+    profile: "Profile"
+    new_post: "New Post"
+    change_password: "Change Password"
+    logout: "Logout"
+    register: "Register"
 
-  title_edit: "Edit Profile"
-  description_edit: "Update your information"
-  password_label: "Password"
-  password_hint: "Leave blank if you don't want to change"
-  password_confirmation_label: "Confirm Password"
-  current_password_label: "Current Password"
-  current_password_hint: "We need your current password to confirm changes"
-  update_button: "Update"
-  cancel_account: "Cancel my account"
-  cancel_account_confirm: "Are you sure you want to cancel your account?"
-  back_link: "← Back"
+  forgot_password:
+    title: "Forgot your password?"
+    description: "Create a new secure password for your account"
+    back_to_login: "Back to login"
+    request: "Send reset instructions"
 
-  title_create: "Create Account"
-  name_label: "Name"
-  submit_button_register: "Register"
+  password_reset:
+    greeting: "Hello <%= email %>!"
+    instructions: "Someone requested a link to change your password. You can do so by clicking the link below."
+    change_password_link: "Change my password"
+    ignore_warning: "If you did not request this, please ignore this email."
+    safety_note: "Your password will not be changed until you click the link above and set a new one."
 
-  submit_button_enter: "Enter"
+  change_password:
+    title: "Change Password"
+    description: "Create a new secure password for your account"
+    new_password: "New password"  
+    password_confirmation: "Confirm new password"
+    submit_button: "Change my password"
+    minimum_length: "minimum characters"
+    minimum_characters: "Minimum 6 characters required"
+    back_to_login: "Back to login"
+  
+  login:
+    password_label: "Password"
+    submit_button_enter: "Enter"
+    forgot_link: "Forgot your password ?"
+    remember_me: "Remember me"
 
-  title_label: "Title"
-  content_label: "Content"
-  tags_label: "Tags (separated by commas)"
-  save_button: "Save Post"
-  cancel_button: "Cancel"
-  new_post_title: "Create New Post"
-  edit_post_title: "Edit Post"
-  errors_heading: "Errors prevent this post from being saved:"
-  errors_list: 
-      - "Error saving post"
+  post_show:
+    btn_edit: "Edit"
+    btn_delete: "Delete"
+    confirm_delete: "Are you sure you want to delete this post ?"
+    posted_by: "Posted by"
+    on_posted: "on"
+    comments: "Comments"
+    anonimo: "Anonymous"
+    m_comment: "Write a comment"
+    comment: "Comment"
 
-  btn_edit: "Edit"
-  btn_delete: "Delete"
-  posted_by: "Posted by"
-  comments: "Comments"
-  anonimo: "Anonymous"
-  m_comment: "Make a comment"
-  comment: "Comment"
+  edit_user:
+    title_edit: "Edit Profile"
+    description_edit: "Update your information"
+    password_label: "Password"
+    left_blank: "(leave it blank if you don't want to change it)"
+    password_confirmation_label: "Confirm Password"
+    current_password_label: "Current Password"
+    current_password_hint: "We need your current password to confirm changes"
+    update_button: "Update"
+    cancel_account: "Cancel my account"
+    cancel_account_confirm: "Are you sure you want to cancel your account?"
+    back_link: "← Back"
 
-  search: "Search"
-  your_search: "Enter your search..."
-  no_tag_posts: "There are no posts with this tag"
-  no_posts: "There are no posts created yet"
-  btn_first: "Click here to create the first post"
+  create_user:
+    title_create: "Create Account"
+    name_label: "Name"
+    submit_button_register: "Register"
+    password_label: "Password"
+    password_confirmation_label: "Confirm your password"
 
-  member: "Member since"
-  published: "Published Posts"
-  comments_received: "Comments Received"
-  user_comments: "User Comments"
-  my_posts: "My Posts"
-  comments: "comentários"
+  index_post:
+    search: "Search"
+    your_search: "Enter your search..."
+    no_tag_posts: "There are no posts with this tag"
+    no_posts: "There are no posts created yet"
+    btn_first: "Click here to create the first post"
+
+  user_page:
+    member: "Member since"
+    published: "Published Posts"
+    comments_received: "Comments Received"
+    user_comments: "User Comments"
+    my_posts: "My Posts"
+    comments_show: "comments"
+    read_more: "Read more"
+
+  kaminari:
+    next_page: "Next"
+    previous_page: "Previous"
+
+  posts_create:
+    title_main: "Create Post Manually"
+    title_post: "Title"
+    title_placeholder: "Enter the title of your post."
+    content_post: "Content"
+    content_placeholder: "Write the content of your post here..."
+    cancel_post: "Cancel"
+    save_post: "Save Post"
+    file_upload: "File Upload (TXT)"
+    file_txt: "File (TXT)"
+    file_btn: "Send File"
+    file_format: "File Format:"
+    file_description: "To create posts with tags, use the following format in the .txt file:"
+    file_example: "Post Title 1|Post Content 1|tag1,tag2,tag3"
+    file_example_2: "Post Title 2|Post Content 2|tag4,tag5"
+    file_explanation: "Separate fields by `|` and tags by `,`."
+
+  flash:
+    posts:
+      created: "Post created successfully."
+      not_created: "There was an error creating the post."
+      not_authenticated: "Only logged in users can create posts."
+      updated: "Post updated successfully."
+      not_updated: "Unable to update post."
+      deleted: "Post successfully deleted."
+      not_permission: "You do not have permission to perform this action."
+      upload_sidekid: "Upload started successfully. Please wait a while and refresh the page (F5)."
+      not_upload_sidekiq: "Invalid file or unsupported resource type."
+    comments:
+      created: "Comment created successfully."
+      not_created: "An error occurred while creating the comment."
+
+  activerecord:
+    errors:
+      models:
+        post:
+          attributes:
+            title:
+              blank: "cannot be blank"
+            content:
+              blank: "cannot be left blank"
+        user:
+          attributes:
+            email:
+              blank: "cannot be blank"
+              invalid: "Invalid"
+              taken: "is already in use"
+            password:
+              blank: "cannot be left blank"
+              too_short: "Password is too short (minimum %{count} characters)."
+            password_confirmation:
+              confirmation: "Passwords do not match."
+            current_password:
+              blank: "Current password cannot be left blank."
+            name:
+              blank: "cannot be left blank"
+      messages:
+        blank: "cannot be left blank."
+        too_short: "is very short (minimum %{count} characters)."
+        too_long: "is too long (maximum %{count} characters)."
+        invalid: "is invalid."
+        taken: "is already in use."
+        not_saved: "An error occurred while saving the changes."
+        password_confirmation: "Passwords do not match."
+        current_password: "Current password is invalid."
+
+  devise:
+    sessions:
+      signed_out: "You exited successfully."
+      signed_in: "You have successfully logged in."
+    failure:
+      user:
+        invalid: "Invalid email or password."
+        not_found_in_database: "Invalid email or password."
+    registrations:
+      new:
+        form_error_title: "Please fix the following errors:"
+      updated: "Your profile information has been updated successfully."

@@ -5,17 +5,10 @@ Rails.application.routes.draw do
   end
 
   # Autenticação com Devise
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'users/registrations' }
 
   # Perfil de Usuários
-  resources :users, only: [ :show ]
-
-  # Rota de Saúde
-  get "up" => "rails/health#show", as: :rails_health_check
-
-  # Progressive Web App (PWA)
-  get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
-  get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
+  resources :users, only: [:show]
 
   post "/uploads", to: "uploads#process_upload"
 

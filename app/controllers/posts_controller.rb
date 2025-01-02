@@ -39,7 +39,7 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     if current_user.nil?
-      redirect_to root_path, alert: "Apenas usuários logados podem criar post."
+      redirect_to root_path, alert: t("flash.posts.not_authenticated")
     else
       @post = Post.new
     end
@@ -54,7 +54,7 @@ class PostsController < ApplicationController
   def create
     if current_user.nil?
       respond_to do |format|
-        format.html { redirect_to root_path, alert: "Apenas usuários logados podem criar post." }
+        format.html { redirect_to root_path, alert: t("flash.posts.not_authenticated") }
         format.json { render json: { error: "Apenas usuários logados podem criar post." }, status: :unauthorized }
       end
       return
@@ -73,7 +73,7 @@ class PostsController < ApplicationController
           end
         end
 
-        format.html { redirect_to @post, notice: "Post criado com sucesso." }
+        format.html { redirect_to @post, notice: t("flash.posts.created") }
         format.json { render json: { message: "Post criado com sucesso", post: @post }, status: :created }
       else
         format.html { render :new }
@@ -86,7 +86,7 @@ class PostsController < ApplicationController
   def update
     unless user_signed_in?
       respond_to do |format|
-        format.html { redirect_to root_path, alert: "Apenas usuários logados podem atualizar posts." }
+        format.html { redirect_to root_path, alert: t("flash.posts.not_authenticated") }
         format.json { render json: { error: "Apenas usuários logados podem atualizar post." }, status: :unauthorized }
       end
       return
@@ -101,10 +101,10 @@ class PostsController < ApplicationController
           @post.tags = tags # Reassocia as tags ao post (remover as antigas e adicionar as novas)
         end
 
-        format.html { redirect_to @post, notice: "Post atualizado com sucesso." }
+        format.html { redirect_to @post, notice: t("flash.posts.updated") }
         format.json { render json: { message: "Post atualizado com sucesso", post: @post }, status: :ok }
       else
-        format.html { render :edit, status: :unprocessable_entity }
+        format.html { render :edit, alert: t("flash.posts.not_updated") }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
@@ -115,7 +115,7 @@ class PostsController < ApplicationController
     @post.destroy!
 
     respond_to do |format|
-      format.html { redirect_to posts_path, status: :see_other, notice: "Post excluído com sucesso." }
+      format.html { redirect_to posts_path, status: :see_other, notice: t("flash.posts.deleted") }
       format.json { render json: { message: "Post excluído com sucesso" }, status: :ok }
     end
   end
@@ -125,7 +125,7 @@ class PostsController < ApplicationController
   def authorize_user
     unless current_user == @post.user
       respond_to do |format|
-        format.html { redirect_to root_path, alert: "Você não tem permissão para realizar essa ação." }
+        format.html { redirect_to root_path, alert: t("flash.posts.not_permission")}
         format.json { render json: { error: "Você não tem permissão para realizar essa ação." }, status: :forbidden }
       end
     end

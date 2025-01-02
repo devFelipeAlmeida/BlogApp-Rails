@@ -7,29 +7,29 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <%= link_to t(:home), root_path, class: "nav-link active" %>
+          <%= link_to t("navbar.home"), root_path, class: "nav-link active" %>
         </li>
         <% if user_signed_in? %>
         <li class="nav-item">
-          <%= link_to t(:profile), user_path(current_user), class: "nav-link active" %>
+          <%= link_to t("navbar.profile"), user_path(current_user), class: "nav-link active" %>
         </li>
         <% end %>
       </ul>
       <div class="d-flex">
         <% if user_signed_in? %>
-          <%= link_to t(:new_post), new_post_path, class: "btn btn-success me-2" %>
-          <%= link_to t(:change_password), edit_user_registration_path, class: 'btn btn-primary me-2' %>
-          <%= button_to t(:logout), destroy_user_session_path, method: :delete, class: "btn btn-danger me-2" %>
+          <%= link_to t("navbar.new_post"), new_post_path, class: "btn btn-success me-2" %>
+          <%= link_to t("navbar.change_password"), edit_user_registration_path, class: 'btn btn-primary me-2' %>
+          <%= button_to t("navbar.logout"), destroy_user_session_path, method: :delete, class: "btn btn-danger me-2" %>
         <% else %>
           <%= link_to "Login", new_user_session_path, class: "btn btn-outline-primary me-2" %>
-          <%= link_to t(:submit_button_register), new_user_registration_path, class: "btn btn-primary me-2" %>
+          <%= link_to t("navbar.register"), new_user_registration_path, class: "btn btn-primary me-2" %>
         <% end %>
 
         <!-- Dropdown de idioma -->
         <div class="dropdown">
-          <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
             <%= I18n.locale == :pt ? "Português" : "English" %>
-          </button>
+          </a>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <li>
               <%= link_to "Português", set_locale_path(locale: :pt), class: "dropdown-item" %>

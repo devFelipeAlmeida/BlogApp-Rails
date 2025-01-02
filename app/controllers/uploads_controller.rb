@@ -5,7 +5,6 @@ class UploadsController < ApplicationController
     file = params[:file]
     resource_type = params[:resource_type] # 'posts', 'tags', 'combined'
 
-    # Verificar se o arquivo foi enviado e se o tipo de recurso é válido
     if file.present? && file.content_type == "text/plain" && %w[posts tags combined].include?(resource_type)
       file_path = Rails.root.join("tmp", file.original_filename)
 
@@ -15,9 +14,11 @@ class UploadsController < ApplicationController
       # Enfileirar o processamento com Sidekiq
       UploadProcessorJob.perform_later(file_path.to_s, resource_type, current_user.id)
 
-      render json: { message: "#{resource_type.capitalize} upload iniciado." }, status: :accepted
+      # Redirecionar com mensagem de sucesso
+      redirect_to root_path, notice: t("flash.posts.upload_sidekiq")
     else
-      render json: { error: "Arquivo inválido ou tipo de recurso não suportado." }, status: :unprocessable_entity
+      # Redirecionar com mensagem de erro
+      redirect_to root_path, alert: t("flash.posts.not_upload_sidekiq")
     end
   end
 end

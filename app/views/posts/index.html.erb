@@ -1,9 +1,4 @@
 <div class="container my-4" id="posts">
-  <!-- Exibição de mensagens de notificação ou alerta -->
-  <% if alert %>
-    <p id="alert" class="flash-message" style="color: red"><%= alert %></p>
-  <% end %>
-
   <div class="container mt-5">
     <div class="row justify-content-center">
       <div class="col-md-6">
@@ -14,11 +9,11 @@
                 <%= form.text_field :search, 
                     value: params[:search], 
                     class: "form-control py-2", 
-                    placeholder: t(:your_search), 
-                    aria: { label: t(:search) }, 
+                    placeholder: t("index_post.your_search"), 
+                    aria: { label: t("index_post.search") }, 
                     id: "search-input",
                     autocomplete: "off" %>
-                <%= form.submit t(:search), class: "btn btn-primary px-4", aria: { label: t(:search) } %>
+                <%= form.submit t("index_post.search"), class: "btn btn-primary px-4", aria: { label: t("index_post.search") } %>
               </div>
             </div>
           <% end %>
@@ -31,7 +26,7 @@
   <% if params[:search].present? && @posts.empty? %>
     <div class="d-flex justify-content-center">
       <h1 class="d-flex flex-column mt-5">
-        <%= t(:no_tag_posts) %>
+        <%= t("index_post.no_tag_posts") %>
       </h1>
     </div>
   <% else %>
@@ -39,14 +34,14 @@
     <% if @posts.empty? %>
       <div class="d-flex justify-content-center">
         <h2 class="d-flex flex-column mt-5">
-          <%= t(:no_posts) %>
-          <%= link_to t(:btn_first), new_post_path, class: 'btn btn-primary mt-3' %>
+          <%= t("index_post.no_posts") %>
+          <%= link_to t("index_post.btn_first"), new_post_path, class: 'btn btn-primary mt-3' %>
         </h2>
       </div>
     <% else %>
       <div class="row">
         <% @posts.each do |post| %>
-          <%= render partial: "post", locals: { post: post } %>  <!-- Passa o post correto para o partial -->
+          <%= render partial: "post", locals: { post: post } %> 
         <% end %>
 
         <%= paginate @posts %>
@@ -54,43 +49,3 @@
     <% end %>
   <% end %>
 </div>
-
-<!-- Estilo para o efeito de "subir" -->
-<style>
-  .flash-message {
-    transition: transform 1s ease, opacity 1s ease;
-    position: relative;
-  }
-
-  .flash-message.hidden {
-    opacity: 0; /* Torna invisível */
-  }
-</style>
-
-<script>
-document.addEventListener('turbo:load', function() {
-  const form = document.querySelector('form');
-  if (form) {
-    form.addEventListener('keypress', function(e) {
-      if (e.key === 'Enter') {
-        form.requestSubmit();
-      }
-    });
-  }
-});
-</script>
-
-<!-- Script para aplicar o efeito -->
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const flashMessages = document.querySelectorAll('.flash-message');
-
-    flashMessages.forEach((message) => {
-      setTimeout(() => {
-        message.classList.add('hidden'); // Adiciona a classe "hidden" após 5 segundos
-
-        setTimeout(() => message.remove(), 1000); // Remove do DOM após a animação (1s)
-      }, 5000); // Aguarda 5 segundos antes de começar a animação
-    });
-  });
-</script>

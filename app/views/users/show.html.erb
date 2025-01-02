@@ -8,7 +8,7 @@
       </div>
       <div class="text-center">
         <h1 class="fs-3 fw-bold mb-0"><%= @user.name %></h1>
-        <p class="text-muted mb-0"><%=t(:member)%> <%= @user.created_at.strftime('%d/%m/%Y') %></p>
+        <p class="text-muted mb-0"><%=t("user_page.member")%> <%= @user.created_at.strftime('%d/%m/%Y') %></p>
       </div>
     </div>
   </div>
@@ -21,54 +21,45 @@
         <div class="row text-center">
           <div class="col-md-4">
             <p class="fs-3 fw-bold text-primary mb-0"><%= @posts.size %></p>
-            <p class="text-muted"><%= t(:published) %></p>
+            <p class="text-muted"><%= t("user_page.published") %></p>
           </div>
           <div class="col-md-4">
             <p class="fs-3 fw-bold text-primary mb-0">
               <%= @posts.sum { |post| post.comments.count } %>
             </p>
-            <p class="text-muted"><%= t(:comments_received) %></p>
+            <p class="text-muted"><%= t("user_page.comments_received") %></p>
           </div>
           <div class="col-md-4">
           <p class="fs-3 fw-bold text-primary mb-0">
            <%= Comment.where(user_id: @user.id).count %>
           </p>
-          <p class="text-muted"><%= t(:user_comments) %></p>
+          <p class="text-muted"><%= t("user_page.user_comments") %></p>
         </div>
         </div>
       </div>
     </div>
 
     <!-- Lista de Posts -->
-    <h2 class="fs-4 fw-bold mb-3"><%= t(:my_posts) %></h2>
+    <h2 class="fs-4 fw-bold mb-3"><%= t("user_page.my_posts") %></h2>
     
     <% @posts.each do |post| %>
       <div class="card mb-3">
         <div class="card-body">
           <div class="d-flex justify-content-between align-items-start mb-3">
             <div>
-              <h3 class="fs-5 fw-bold mb-1"><%= post.title %></h3>
+              <h3 class="fs-5 fw-bold mb-1">
+                <%= link_to post.title, post_path(post), class: 'text-decoration-none' %>
+              </h3>
               <p class="text-muted small mb-0"><%= post.created_at.strftime('%d/%m/%Y') %></p>
-            </div>
-            <div class="d-flex gap-2">
-              <%= link_to edit_post_path(post), class: "btn btn-light btn-sm" do %>
-                <i class="bi bi-pencil"></i>
-              <% end %>
-              <%= link_to post_path(post), 
-                  method: :delete, 
-                  data: { confirm: "Tem certeza que deseja excluir este post?" }, 
-                  class: "btn btn-light btn-sm" do %>
-                <i class="bi bi-trash"></i>
-              <% end %>
             </div>
           </div>
           <p class="text-secondary"><%= post.content.truncate(150) %></p>
           <div class="d-flex align-items-center gap-3 mt-3">
             <span class="text-muted">
               <i class="bi bi-chat-dots me-1"></i>
-              <%= post.comments.count %> <%=t(:comments_show)%>
+              <%= post.comments.count %> <%=t("user_page.comments_show")%>
             </span>
-            <%= link_to "Ler mais", post_path(post), class: "text-primary text-decoration-none" %>
+            <%= link_to t("user_page.read_more"), post_path(post), class: "text-primary text-decoration-none" %>
           </div>
         </div>
       </div>

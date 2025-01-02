@@ -2,11 +2,11 @@
   <ul class="pagination justify-content-center">
     <% if @posts.prev_page %>
       <li class="page-item">
-        <%= link_to 'Anterior', posts_path(page: @posts.prev_page), class: 'page-link' %>
+        <%= link_to t("kaminari.previous_page"), posts_path(page: @posts.prev_page), class: 'page-link' %>
       </li>
     <% else %>
       <li class="page-item disabled">
-        <span class="page-link">Anterior</span>
+        <span class="page-link"><%=t("kaminari.previous_page")%></span>
       </li>
     <% end %>
 
@@ -18,11 +18,11 @@
 
     <% if @posts.next_page %>
       <li class="page-item">
-        <%= link_to 'Próxima', posts_path(page: @posts.next_page), class: 'page-link' %>
+        <%= link_to t("kaminari.next_page"), posts_path(page: @posts.next_page), class: 'page-link' %>
       </li>
     <% else %>
       <li class="page-item disabled">
-        <span class="page-link">Próxima</span>
+        <span class="page-link"><%=("kaminari.next_page")%></span>
       </li>
     <% end %>
   </ul>

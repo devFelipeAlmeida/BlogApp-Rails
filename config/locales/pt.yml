@@ -1,67 +1,167 @@
 pt:
-  home: "Início"
-  profile: "Perfil"
-  new_post: "Novo Post"
-  change_password: "Alterar Senha"
-  logout: "Sair"
-  register: "Cadastrar"
-  title: "Esqueceu a senha?"
-  description: "Crie uma nova senha segura para sua conta"
-  new_password: "Nova senha"
-  password_confirmation: "Confirmar nova senha"
-  submit_button: "Alterar minha senha"
-  back_to_login: "Voltar para login"
-  minimum_length: "caracteres no mínimo"
-  request: "Enviar instruções de redefinição"
+  navbar:
+    home: "Início"
+    profile: "Perfil"
+    new_post: "Novo Post"
+    change_password: "Alterar Senha"
+    logout: "Sair"
+    register: "Cadastrar"
 
-  title_edit: "Editar Perfil"
-  description_edit: "Atualize suas informações"
-  password_label: "Senha"
-  password_hint: "Deixe em branco se não quiser alterar"
-  password_confirmation_label: "Confirme sua Senha"
-  current_password_label: "Senha Atual"
-  current_password_hint: "Precisamos da sua senha atual para confirmar as alterações"
-  update_button: "Atualizar"
-  cancel_account: "Cancelar minha conta"
-  cancel_account_confirm: "Tem certeza que deseja cancelar sua conta?"
-  back_link: "← Voltar"
+  forgot_password:
+    title: "Esqueceu a senha?"
+    description: "Crie uma nova senha segura para sua conta"
+    back_to_login: "Voltar para login"
+    request: "Enviar instruções de redefinição"
 
-  title_create: "Criar Conta"
-  name_label: "Nome"
-  submit_button_register: "Registrar"
+  password_reset:
+    greeting: "Olá <%= email %>!"
+    instructions: "Alguém solicitou um link para alterar sua senha. Você pode fazer isso através do link abaixo."
+    change_password_link: "Alterar minha senha"
+    ignore_warning: "Se você não solicitou isso, ignore este e-mail."
+    safety_note: "Sua senha não será alterada até que você acesse o link acima e crie uma nova."
 
-  submit_button_enter: "Entrar"
-
-  title_label: "Título"
-  content_label: "Conteúdo"
-  tags_label: "Tags (separadas por vírgulas)"
-  save_button: "Salvar Post"
-  cancel_button: "Cancelar"
-  new_post_title: "Criar Novo Post"
-  edit_post_title: "Editar Post"
-  errors_heading: "Erros impedem que este post seja salvo:"
-  errors_list: 
-    - "Erro ao salvar o post"
-
-  btn_edit: "Editar"
-  btn_delete: "Excluir"
-  posted_by: "Publicado por"
-  comments: "Comments"
-  anonimo: "Anônima"
-  m_comment_show: "Faça um comentário"
-  comment: "Commentar"
-
-  search: "Pesquisar"
-  your_search: "Digite sua pesquisa..."
-  no_tag_posts: "Não há posts com essa tag"
-  no_posts: "Não há posts criados ainda"
-  btn_first: "Clique aqui para criar o primeiro post"
-
-  member: "Membro desde"
-  published: "Posts Publicados"
-  comments_received: "Comentários Recebidos"
-  user_comments: "Comentários do User"
-  my_posts: "Meus Posts"
-  comments_show: "comentários"
-
+  change_password:
+    title: "Trocar senha"
+    description: "Crie uma nova senha segura para sua conta"
+    new_password: "Nova senha"
+    password_confirmation: "Confirmar nova senha"
+    submit_button: "Alterar minha senha"
+    minimum_length: "caracteres no mínimo"
+    minimum_characters: "Minimo de 6 letras"
+    back_to_login: "Voltar para o Login"
   
+  login:
+    password_label: "Senha"
+    submit_button_enter: "Entrar"
+    forgot_link: Esqueceu sua senha ?"
+    remember_me: "Lembre-se de mim"
+
+  post_show:
+    btn_edit: "Editar"
+    btn_delete: "Excluir"
+    confirm_delete: "Tem certeza que deseja excluir este post?"
+    posted_by: "Publicado por"
+    on_posted: "em"
+    comments: "Comentários"
+    anonymous: "Anônima"
+    m_comment: "Escreva um comentário"
+    comment: "Comentar"
+
+  edit_user:
+    title_edit: "Editar Perfil"
+    description_edit: "Atualize suas informações"
+    password_label: "Senha"
+    left_blank: "(deixe em branco se não quiser alterar)"
+    password_confirmation_label: "Confirme sua Senha"
+    current_password_label: "Senha Atual"
+    current_password_hint: "Precisamos da sua senha atual para confirmar as alterações"
+    update_button: "Atualizar"
+    cancel_account: "Cancelar minha conta"
+    cancel_account_confirm: "Tem certeza que deseja cancelar sua conta?"
+    back_link: "← Voltar"
+
+  create_user:
+    title_create: "Criar Conta"
+    name_label: "Nome"
+    submit_button_register: "Registrar"
+    password_label: "Senha"
+    password_confirmation_label: "Confirme sua Senha"
+
+  index_post:
+    search: "Pesquisar"
+    your_search: "Digite sua pesquisa..."
+    no_tag_posts: "Não há posts com essa tag"
+    no_posts: "Não há posts criados ainda"
+    btn_first: "Clique aqui para criar o primeiro post"
+
+  user_page:
+    member: "Membro desde"
+    published: "Posts Publicados"
+    comments_received: "Comentários Recebidos"
+    user_comments: "Comentários do Usuário"
+    my_posts: "Meus Posts"
+    comments_show: "comentários"
+    read_more: "Read more"
+
+  kaminari:
+    next_page: "Próxima"
+    previous_page: "Anterior"
+
+  posts_create:
+    title_main: "Criar Post Manualmente"
+    title_post: "Título"
+    title_placeholder: "Digite o título do seu post."
+    content_post: "Conteúdo"
+    content_placeholder: "Escreva o conteúdo do seu post aqui..."
+    cancel_post: "Cancelar"
+    save_post: "Salvar Post"
+    file_upload: "Upload de Arquivo (TXT)"
+    file_txt: "Arquivo (TXT)"
+    file_btn: "Enviar Arquivo"
+    file_format: "Formato do Arquivo:"
+    file_description: "Para criar posts com tags, utilize o seguinte formato no arquivo .txt:"
+    file_example: "Título do Post 1|Conteúdo do Post 1|tag1,tag2,tag3"
+    file_example_2: "Título do Post 2|Conteúdo do Post 2|tag4,tag5"
+    file_explanation: "Separe os campos por `|` e as tags por `,`."
+
+  flash:
+    posts:
+      created: "Post criado com sucesso."
+      not_created: "Houve um erro ao criar o post."
+      not_authenticated: "Apenas usuários logados podem criar post."
+      updated: "Post atualizado com sucesso."
+      not_updated: "Não foi possível atualizar o Post."
+      deleted: "Post excluído com sucesso."
+      not_permission: "Você não tem permissão para realizar essa ação."
+      upload_sidekiq: "Upload iniciado com sucesso. Por favor, aguarde um pouco e atualize a página (F5)."
+      not_upload_sidekiq: "Arquivo inválido ou tipo de recurso não suportado."
+    comments:
+      created: "Comentário criado com sucesso."
+      not_created: "Ocorreu um erro ao criar o comentário."
+
+  activerecord:
+    errors:
+      models:
+        post:
+          attributes:
+            title:
+              blank: "não pode ficar em branco"
+            content:
+              blank: "não pode ficar em branco"
+        user:
+          attributes:
+            email:
+              blank: "não pode ficar em branco"
+              invalid: "inválido"
+              taken: "já está em uso"
+            password:
+              blank: "não pode ficar em branco"
+              too_short: "Senha é muito curta (mínimo de %{count} caracteres)"
+            password_confirmation:
+              confirmation: "As senhas não coincidem"
+            current_password:
+              blank: "Senha atual não pode ficar em branco"
+            name:
+              blank: "não pode ficar em branco"
+      messages:
+        blank: "não pode ficar em branco"
+        too_short: "é muito curto (mínimo de %{count} caracteres)."
+        too_long: "é muito longo (máximo de %{count} caracteres)"
+        invalid: "é inválido."
+        taken: "já está em uso."
+        not_saved: "Houve um erro ao salvar as alterações."
+        password_confirmation: "As senhas não coincidem."
+        current_password: "Senha atual é inválida."
+
+  devise:
+    sessions:
+      signed_out: "Você saiu com sucesso."
+      signed_in: "Você entrou com sucesso."
+    failure:
+      user:
+        invalid: "Email ou senha inválidos."
+        not_found_in_database: "E-mail ou senha inválidos."
+    registrations:
+      new:
+        form_error_title: "Por favor, corrija os seguintes erros:"
+      updated: "As informações do seu perfil foram atualizadas com sucesso."

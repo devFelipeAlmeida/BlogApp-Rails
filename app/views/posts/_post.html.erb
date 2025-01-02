@@ -3,73 +3,64 @@
     <div class="col-12 mb-4">
       <div class="card">
         <div class="card-body">
-          <!-- Título do Post com link e Dropdown -->
           <div class="d-flex justify-content-between align-items-center">
             <h2 class="card-title">
-              <%= link_to post.title, post_path(post), class: 'text-decoration-none post-title' %>
+              <%= link_to post.title, post_path(post), class: 'text-decoration-none' %>
             </h2>
-            <!-- Dropdown para ações -->
+
             <% if current_user == post.user %>
               <div class="d-flex justify-content-end">
-                <%= link_to t(:btn_edit), edit_post_path(post), class: 'btn btn-primary btn-sm me-2' %>
-                <%= button_to t(:btn_delete), post, method: :delete, data: { confirm: 'Tem certeza que deseja excluir este post?' }, class: 'btn btn-danger btn-sm' %>
+                <%= link_to t("post_show.btn_edit"), edit_post_path(post), class: 'btn btn-primary btn-sm me-2' %>
+                <%= button_to t("post_show.btn_delete"), post, method: :delete, data: { confirm: t("post_show.confirm_delete") }, class: 'btn btn-danger btn-sm' %>
               </div>
             <% end %>
           </div>
 
-          <!-- Informações do Post -->
           <p class="text-muted">
-  <small>
-    <%=t(:posted_by)%> <%= link_to post.user.name, user_path(post.user) %> em <%= post.created_at.strftime("%d/%m/%Y") %>
-  </small>
-</p>
+            <small>
+              <%= t("post_show.posted_by") %> <%= link_to post.user.name, user_path(post.user) %> <%= t("post_show.on_posted") %> <%= post.created_at.strftime("%d/%m/%Y") %>
+            </small>
+          </p>
 
-          <!-- Tags -->
           <% if post.tags.any? %>
-  <div class="d-flex flex-wrap gap-2 mb-3">
-    <p><strong>Tags:</strong></p>
-    <div>
-      <% post.tags.each do |tag| %>
-        <span class="badge bg-light text-dark"><%= tag.name %></span>
-      <% end %>
-    </div>
-  </div>
-<% end %>
+            <div class="d-flex flex-wrap gap-2 mb-3">
+              <p><strong><%= t("tags") %>:</strong></p>
+              <div>
+                <% post.tags.each do |tag| %>
+                  <span class="badge bg-light text-dark"><%= tag.name %></span>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
 
-          <!-- Conteúdo resumido -->
           <p class="card-text"><%= post.content.truncate(150) %></p>
 
-          <!-- Seção de Comentários com scroll -->
           <div class="mt-4">
-            <h5><%= t(:comments) %></h5>
+            <h5><%= t("post_show.comments") %></h5>
 
-            <!-- Área scrollável de comentários -->
             <% if post.comments.any? %>
-  <div class="comments-section mt-3" style="max-height: 300px; overflow-y: auto; border: 1px solid #ddd; border-radius: 5px; padding: 10px;">
-    <% post.comments.each do |comment| %>
-      <div class="comment mb-3 p-3 bg-light rounded">
-        <p class="mb-1">
-          <strong><%= comment.user ? comment.user.name : t(:anonimo) %></strong>
-          <small class="text-muted"><%= comment.created_at.strftime("%d/%m/%Y") %></small>
-        </p>
-        <p class="mb-0"><%= comment.message %></p>
-      </div>
-    <% end %>
-  </div>
-<% end %>
+              <div class="comments-section mt-3" style="max-height: 300px; overflow-y: auto; border: 1px solid #ddd; border-radius: 5px; padding: 10px;">
+                <% post.comments.each do |comment| %>
+                  <div class="comment mb-3 p-3 bg-light rounded">
+                    <p class="mb-1">
+                      <strong><%= comment.user ? comment.user.name : t("post_show.anonymous") %></strong>
+                      <small class="text-muted"><%= comment.created_at.strftime("%d/%m/%Y") %></small>
+                    </p>
+                    <p class="mb-0"><%= comment.message %></p>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
 
-
-            <!-- Formulário de comentário fora da área de scroll -->
             <div class="mt-3">
               <%= form_with model: [post, Comment.new], local: true do |form| %>
                 <div class="mb-3">
-                  <%= form.text_area :message, placeholder: t(:m_comment), class: 'form-control', rows: 3 %>
+                  <%= form.text_area :message, placeholder: t("post_show.m_comment"), class: 'form-control', rows: 3 %>
                 </div>
-                <%= form.submit t(:comment), class: 'btn btn-primary btn-sm' %>
+                <%= form.submit t("post_show.comment"), class: 'btn btn-primary btn-sm' %>
               <% end %>
             </div>
           </div>
-
         </div>
       </div>
     </div>
