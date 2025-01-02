@@ -28,14 +28,18 @@
         <!-- Dropdown de idioma -->
         <div class="dropdown">
           <a class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-            <%= I18n.locale == :pt ? "Português" : "English" %>
+            <% if I18n.locale == :pt %>
+              <img width="20" height="20" src="https://img.icons8.com/fluency/48/brazil-circular.png" alt="brasil-circular"/>
+            <% else %>
+              <img width="20" height="20" src="https://img.icons8.com/fluency/48/usa-circular.png" alt="usa-circular"/>
+            <% end %>
           </a>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <li>
-              <%= link_to "Português", set_locale_path(locale: :pt), class: "dropdown-item" %>
+              <%= link_to image_tag("https://img.icons8.com/fluency/48/brazil-circular.png", alt: "Brazil"), set_locale_path(locale: :pt), class: "dropdown-item" %>
             </li>
             <li>
-              <%= link_to "English", set_locale_path(locale: :en), class: "dropdown-item" %>
+              <%= link_to image_tag("https://img.icons8.com/fluency/48/usa-circular.png", alt: "USA"), set_locale_path(locale: :en), class: "dropdown-item" %>
             </li>
           </ul>
         </div>
