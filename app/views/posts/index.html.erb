@@ -22,7 +22,6 @@
     </div>
   </div>
 
-  <!-- Verificar se a pesquisa não trouxe posts -->
   <% if params[:search].present? && @posts.empty? %>
     <div class="d-flex justify-content-center">
       <h1 class="d-flex flex-column mt-5">
@@ -30,7 +29,6 @@
       </h1>
     </div>
   <% else %>
-    <!-- Verificar se há posts -->
     <% if @posts.empty? %>
       <div class="d-flex justify-content-center">
         <h2 class="d-flex flex-column mt-5">
