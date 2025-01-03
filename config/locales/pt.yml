@@ -71,7 +71,7 @@ pt:
 
   index_post:
     search: "Pesquisar"
-    your_search: "Digite sua pesquisa..."
+    your_search: "Pesquisa uma tag..."
     no_tag_posts: "Não há posts com essa tag"
     no_posts: "Não há posts criados ainda"
     btn_first: "Clique aqui para criar o primeiro post"

@@ -71,7 +71,7 @@ en:
 
   index_post:
     search: "Search"
-    your_search: "Enter your search..."
+    your_search: "Search for a tag..."
     no_tag_posts: "There are no posts with this tag."
     no_posts: "There are no posts created yet."
     btn_first: "Click here to create the first post."
