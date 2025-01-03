@@ -7,7 +7,7 @@ RSpec.describe "Posts", type: :request do
   describe "DELETE /posts/:id" do
     context "quando o usuário está logado" do
       before do
-        sign_in user 
+        sign_in user
       end
 
       it "deleta um post com sucesso e retorna uma resposta JSON" do
@@ -22,7 +22,6 @@ RSpec.describe "Posts", type: :request do
       end
     end
 
-
     context "quando o usuário não está logado" do
       it "não permite excluir o post e retorna uma mensagem JSON de erro" do
         delete post_path(post), as: :json
@@ -30,7 +29,7 @@ RSpec.describe "Posts", type: :request do
         json_response = JSON.parse(response.body)
         expect(json_response).to include("error" => "Você não tem permissão para realizar essa ação.")
 
-        expect(response.status).to eq(403)
+        expect(response.status).to eq(401)
       end
     end
   end

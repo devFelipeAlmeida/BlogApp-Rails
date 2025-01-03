@@ -166,6 +166,7 @@ pt:
         form_error_title: "Porfavor conserte os seguintes erros:"
     failure:
       user:
+        unauthenticated: "Você não tem permissão para realizar essa ação."
         invalid: "Email ou senha inválidos."
         not_found_in_database: "E-mail ou senha inválidos."
     confirmations:

@@ -40,7 +40,7 @@ RSpec.describe "Posts", type: :request do
         patch post_path(post), params: updated_params, as: :json
 
         json_response = JSON.parse(response.body)
-        expect(response.status).to eq(403)
+        expect(response.status).to eq(401)
         expect(json_response["error"]).to eq("Você não tem permissão para realizar essa ação.")
       end
     end

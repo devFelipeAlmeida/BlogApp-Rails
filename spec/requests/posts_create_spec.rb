@@ -40,7 +40,7 @@ RSpec.describe "Posts", type: :request do
     
         json_response = JSON.parse(response.body)
         expect(response.status).to eq(401)
-        expect(json_response["error"]).to eq("Apenas usuários logados podem criar post.")
+        expect(json_response["error"]).to eq("Você não tem permissão para realizar essa ação.")
       end
     end
   end

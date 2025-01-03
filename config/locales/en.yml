@@ -166,6 +166,7 @@ en:
         form_error_title: "Please fix the following errors:"
     failure:
       user:
+        unauthenticated: "Only logged in users can create posts."
         invalid: "Invalid email or password."
         not_found_in_database: "Invalid email or password."
     confirmations:
