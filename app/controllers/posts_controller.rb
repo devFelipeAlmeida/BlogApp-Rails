@@ -1,42 +1,37 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy]
+  before_action :authenticate_user!, except: %i[index show]
   before_action :authorize_user, only: %i[edit update destroy]
 
-  # GET /posts or /posts.json
   def index
     if params[:search].present?
-      # Buscando posts com tags customizadas
       @posts = Post.joins(:tags)
                    .where("posts.title ILIKE ? OR posts.content ILIKE ? OR tags.name ILIKE ?",
                           "%#{params[:search]}%", "%#{params[:search]}%", "%#{params[:search]}%")
                    .distinct
-                   .order(created_at: :desc) # Ordena os posts por data de criação em ordem decrescente
+                   .order(created_at: :desc)
                    .page(params[:page]).per(3)
     elsif params[:tag].present?
-      # Filtro por tag específica
       @posts = Post.joins(:tags)
                    .where("tags.name ILIKE ?", params[:tag])
-                   .order(created_at: :desc) # Ordena os posts por data de criação em ordem decrescente
+                   .order(created_at: :desc)
                    .page(params[:page]).per(3)
     else
-      # Exibe todos os posts
       @posts = Post.all
-                   .order(created_at: :desc) # Ordena os posts por data de criação em ordem decrescente
+                   .order(created_at: :desc)
                    .page(params[:page]).per(3)
     end
 
     respond_to do |format|
-      format.html # Para o caso de não ser uma requisição Turbo
-      format.turbo_stream # Para a requisição Turbo
+      format.html
+      format.turbo_stream
     end
   end
 
-  # GET /posts/1 or /posts/1.json
   def show
     @comment = Comment.new
   end
 
-  # GET /posts/new
   def new
     if current_user.nil?
       redirect_to root_path, alert: t("flash.posts.not_authenticated")
@@ -45,12 +40,10 @@ class PostsController < ApplicationController
     end
   end
 
-  # GET /posts/1/edit
   def edit
     render json: @post
   end
 
-  # POST /posts or /posts.json
   def create
     if current_user.nil?
       respond_to do |format|
@@ -64,7 +57,6 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        # Verificando se as tags estão presentes e associando ao post
         if params[:post][:tags].present?
           custom_tags = params[:post][:tags].split(",").map(&:strip).uniq
           custom_tags.each do |tag_name|
@@ -82,7 +74,6 @@ class PostsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /posts/1 or /posts/1.json
   def update
     unless user_signed_in?
       respond_to do |format|
@@ -94,11 +85,10 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.update(post_params)
-        # Atualizar tags customizadas associadas
         if params[:post][:tags].present?
           custom_tags = params[:post][:tags].split(",").map(&:strip).uniq
           tags = custom_tags.map { |tag_name| Tag.find_or_create_by(name: tag_name) }
-          @post.tags = tags # Reassocia as tags ao post (remover as antigas e adicionar as novas)
+          @post.tags = tags
         end
 
         format.html { redirect_to @post, notice: t("flash.posts.updated") }
@@ -110,7 +100,6 @@ class PostsController < ApplicationController
     end
   end
 
-  # DELETE /posts/1 or /posts/1.json
   def destroy
     @post.destroy!
 
@@ -131,12 +120,10 @@ class PostsController < ApplicationController
     end
   end
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_post
     @post = Post.find(params[:id])
   end
 
-  # Somente permite os parâmetros confiáveis
   def post_params
     params.require(:post).permit(:title, :content)
   end
