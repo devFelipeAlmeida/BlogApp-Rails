@@ -16,7 +16,7 @@ RSpec.describe "Posts", type: :request do
         patch post_path(post), params: updated_params, as: :json
 
         json_response = JSON.parse(response.body)
-        expect(response.status).to eq(200)  # Espera status HTTP 200 (OK)
+        expect(response.status).to eq(200)
         expect(json_response["message"]).to eq("Post atualizado com sucesso")
         expect(json_response["post"]["title"]).to eq('Título atualizado')
         expect(json_response["post"]["content"]).to eq('Conteúdo atualizado')
@@ -28,8 +28,8 @@ RSpec.describe "Posts", type: :request do
         patch post_path(post), params: updated_params, as: :json
 
         json_response = JSON.parse(response.body)
-        expect(response.status).to eq(422)  # Espera status HTTP 422 (Unprocessable Entity)
-        expect(json_response["title"]).to include("can't be blank")
+        expect(response.status).to eq(422)
+        expect(json_response["title"]).to include("não pode ficar em branco")
       end
     end
 
@@ -40,7 +40,7 @@ RSpec.describe "Posts", type: :request do
         patch post_path(post), params: updated_params, as: :json
 
         json_response = JSON.parse(response.body)
-        expect(response.status).to eq(403)  # Espera status HTTP 403 (Forbidden)
+        expect(response.status).to eq(403)
         expect(json_response["error"]).to eq("Você não tem permissão para realizar essa ação.")
       end
     end

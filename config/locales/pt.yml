@@ -159,11 +159,19 @@ pt:
     sessions:
       signed_out: "Você saiu com sucesso."
       signed_in: "Você entrou com sucesso."
+    registrations:
+      signed_up: "Você se registrou com sucesso."
+      updated: "As informações do seu perfil foram atualizadas com sucesso."
+      new:
+        form_error_title: "Porfavor conserte os seguintes erros:"
     failure:
       user:
         invalid: "Email ou senha inválidos."
         not_found_in_database: "E-mail ou senha inválidos."
-    registrations:
-      new:
-        form_error_title: "Por favor, corrija os seguintes erros:"
-      updated: "As informações do seu perfil foram atualizadas com sucesso."
+    confirmations:
+      confirmed: "Conta confirmada com sucesso."
+      resend: "Reenvio de e-mail de confirmação foi bem-sucedido."
+    passwords:
+      send_instructions: "Instruções enviadas para o e-mail com sucesso."
+      updated: "Senha alterada com sucesso."
+      not_updated: "Não foi possível alterar a senha."

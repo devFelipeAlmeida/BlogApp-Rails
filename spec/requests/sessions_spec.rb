@@ -17,12 +17,12 @@ RSpec.describe "Sessions", type: :request do
 
     it "does not log in with incorrect credentials and returns an error message" do
       post user_session_path, params: { user: { email: 'wrong@example.com', password: 'wrongpassword' } }
-
-      # Verifica se o status HTTP é 200 (formulário renderizado novamente)
+    
+      # Verifica se o status HTTP é 422 (Unprocessable Entity)
       expect(response).to have_http_status(422)
-
+    
       # Verifica se o conteúdo HTML inclui a mensagem de erro do Devise
-      expect(response.body).to include("Invalid Email or password")
+      expect(response.body).to include("E-mail ou senha inválidos.")
     end
   end
 end

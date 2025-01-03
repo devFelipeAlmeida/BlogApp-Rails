@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   # Perfil de Usuários
   resources :users, only: [:show]
 
-  post "/uploads", to: "uploads#process_upload"
+  post "/uploads", to: "uploads#process_upload", as: "process_upload"
 
   # Interface do Sidekiq
   require "sidekiq/web"

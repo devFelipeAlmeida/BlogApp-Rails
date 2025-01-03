@@ -1,4 +1,3 @@
-<!-- app/views/layouts/application.html.erb -->
 <!DOCTYPE html>
 <html>
   <head>
@@ -10,6 +9,7 @@
 
     <%= yield :head %>
 
+    <link rel="manifest" href="/manifest.json">
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
@@ -20,8 +20,7 @@
 
   <body class="bg-light">
     <%= render 'layouts/navbar' %>
-
-    <!-- Notificações de alert e notice -->
+    
     <div class="container mt-3">
       <% if notice %>
         <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -38,6 +37,6 @@
       <% end %>
     </div>
 
-    <%= yield %> <!-- Aqui vai o conteúdo específico da view -->
+    <%= yield %> 
   </body>
 </html>

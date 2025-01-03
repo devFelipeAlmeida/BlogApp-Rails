@@ -1,5 +1,12 @@
 require 'rails_helper'
 
-RSpec.describe UploadPostsJob, type: :job do
-  pending "add some examples to (or delete) #{__FILE__}"
+RSpec.describe UploadProcessorJob, type: :job do
+  let(:file) { fixture_file_upload('sample.txt', 'text/plain') }
+  let(:user) { create(:user) }
+
+  it 'uploads posts from a file' do
+    expect {
+      UploadProcessorJob.perform_now(file.path, user.id)
+    }.to change(Post, :count).by(2)
+  end
 end
