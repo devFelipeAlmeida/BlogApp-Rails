@@ -34,17 +34,15 @@
 
           <h2 class="mb-4"><%= t("posts_create.file_upload") %></h2>
           <%= form_with url: '/uploads', method: :post, local: true, html: { multipart: true } do |f| %>
+  <div class="mb-3">
+    <label for="file" class="form-label"><%= t("posts_create.file_txt") %></label>
+    <%= file_field_tag :file, class: "form-control", id: "file", accept: ".txt" %>
+  </div>
 
-            <div class="mb-3">
-              <label for="file" class="form-label"><%= t("posts_create.file_txt") %></label>
-              <%= file_field_tag :file, class: "form-control", id: "file", accept: ".txt" %>
-            </div>
-
-            <div>
-              <%= submit_tag t("posts_create.file_btn"), class: "btn btn-primary" %>
-            </div>
-
-          <% end %>
+  <div>
+    <%= submit_tag t("posts_create.file_btn"), class: "btn btn-primary" %>
+  </div>
+<% end %>
 
           <div class="mt-4">
             <p><strong><%= t("posts_create.file_format") %></strong></p>

@@ -1,17 +1,11 @@
 class UploadsController < ApplicationController
   def process_upload
-    file = params[:file]
-
-    if file && file.content_type == "text/plain"
-      file_path = Rails.root.join("tmp", file.original_filename)
-
-      File.open(file_path, "wb") { |f| f.write(file.read) }
-
-      UploadProcessorJob.perform_later(file_path.to_s, current_user.id)
-
-      redirect_to root_path, notice: t("flash.posts.upload_sidekiq")
+    if params[:file].present?
+      file_path = params[:file].path
+      ImportPostsJob.perform_later(file_path)
+      render json: { message: 'Arquivo enviado com sucesso. O processamento será feito em segundo plano.' }, status: :ok
     else
-      redirect_to root_path, alert: t("flash.posts.not_upload_sidekiq")
+      render json: { error: 'Nenhum arquivo foi enviado.' }, status: :unprocessable_entity
     end
   end
 end

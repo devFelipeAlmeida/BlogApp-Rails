@@ -21,7 +21,7 @@ class PostsController < ApplicationController
                    .order(created_at: :desc)
                    .page(params[:page]).per(3)
     end
-
+  
     respond_to do |format|
       format.html
       format.turbo_stream
