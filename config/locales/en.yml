@@ -123,6 +123,8 @@ en:
 
   activerecord:
     errors:
+      messages:
+        record_invalid: "não é valido"
       models:
         post:
           attributes:

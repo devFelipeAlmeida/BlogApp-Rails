@@ -1,11 +1,23 @@
 class UploadsController < ApplicationController
   def process_upload
-    if params[:file].present?
-      file_path = params[:file].path
-      ImportPostsJob.perform_later(file_path)
-      render json: { message: 'Arquivo enviado com sucesso. O processamento será feito em segundo plano.' }, status: :ok
+    file = params[:file]
+  
+    if file && file.content_type == "text/plain"
+      # Forçar a criação de um novo blob
+      unique_filename = "#{Time.now.to_i}_#{file.original_filename}"
+      blob = ActiveStorage::Blob.create_and_upload!(
+        io: file.tempfile, 
+        filename: unique_filename, 
+        content_type: file.content_type
+      )
+  
+      # Enfileira o job passando o ID do blob criado
+      UploadProcessorJob.perform_later(blob.id, current_user.id)
+  
+      redirect_to root_path, notice: t("flash.posts.upload_sidekiq")
     else
-      render json: { error: 'Nenhum arquivo foi enviado.' }, status: :unprocessable_entity
+      redirect_to root_path, alert: t("flash.posts.not_upload_sidekiq")
     end
   end
+  
 end

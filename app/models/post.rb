@@ -10,7 +10,7 @@ class Post < ApplicationRecord
   # Atribui tags a partir de uma string de nomes separados por vírgula
   def tag_names=(names)
     self.tags = names.split(",").map do |name|
-      Tag.find_or_create_by(name: name.strip.downcase)
+      Tag.find_or_initialize_by(name: name.strip.downcase, post: self)
     end
   end
 

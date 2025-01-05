@@ -35,7 +35,7 @@ pt:
   login:
     password_label: "Senha"
     submit_button_enter: "Entrar"
-    forgot_link: Esqueceu sua senha ?"
+    forgot_link: "Esqueceu sua senha ?"
     remember_me: "Lembre-se de mim"
 
   post_show:
@@ -123,6 +123,8 @@ pt:
 
   activerecord:
     errors:
+      messages:
+        record_invalid: "não é válido"
       models:
         post:
           attributes:

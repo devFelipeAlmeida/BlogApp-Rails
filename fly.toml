@@ -1,4 +1,4 @@
-# fly.toml app configuration file generated for blogapp-rails on 2025-01-04T10:12:49-03:00
+# fly.toml app configuration file generated for blogapp-rails on 2025-01-04T14:54:48-03:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
@@ -10,8 +10,8 @@ console_command = '/rails/bin/rails console'
 [build]
 
 [processes]
-app = "web"
-worker = "worker"
+app = "bundle exec puma -C config/puma.rb"
+worker = "bundle exec sidekiq"
 
 [http_service]
   internal_port = 3000
@@ -21,7 +21,15 @@ worker = "worker"
   min_machines_running = 0
   processes = ['app']
 
+[env]
+RAILS_ENV = "production"
+
 [[vm]]
   memory = '1gb'
   cpu_kind = 'shared'
   cpus = 1
+
+[[mounts]]
+source = "app_data"
+destination = "/tmp/uploads"
+processes = ["app", "worker"]
