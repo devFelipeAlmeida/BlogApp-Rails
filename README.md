@@ -1,4 +1,4 @@
-# Blog App - Projeto em Rails
+# BlogApp - Rails
 
 Este é um blog completo desenvolvido com **Ruby on Rails**, utilizando **PostgreSQL** como banco de dados, com funcionalidades como criação de posts, comentários, autenticação de usuários, e upload de arquivos com processamento assíncrono via **Sidekiq**.
 
