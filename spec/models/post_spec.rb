@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
   let(:user) { create(:user) }
-  let(:post) { create(:post, user: user, title: "Post de Teste", content: "Este é um conteúdo de teste.") }
+  let(:post) { create(:post, user: user) }
 
   describe "associações" do
     it "pertence a um usuário" do
@@ -19,12 +19,12 @@ RSpec.describe Post, type: :model do
       expect(post.tags).to include(tag)
     end
 
-    it "destrói os comentários associados quando o post for destruído" do
+    it "destroi os comentários associados quando o post é destruído" do
       comment = create(:comment, post: post)
       expect { post.destroy }.to change(Comment, :count).by(-1)
     end
 
-    it "destrói as tags associadas quando o post for destruído" do
+    it "destroi as tags associadas quando o post é destruído" do
       tag = create(:tag, name: "tag1", post: post)
       expect { post.destroy }.to change(Tag, :count).by(-1)
     end
@@ -61,7 +61,7 @@ RSpec.describe Post, type: :model do
   end
 
   describe "#tag_names" do
-    it "retorna uma string separada por vírgulas dos nomes das tags" do
+    it "retorna uma string separada por vírgulas com os nomes das tags" do
       post.tag_names = "tag1, tag2, tag3"
       expect(post.tag_names).to eq("tag1, tag2, tag3")
     end
