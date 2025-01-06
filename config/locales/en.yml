@@ -115,8 +115,9 @@ en:
       not_updated: "Unable to update post."
       deleted: "Post successfully deleted."
       not_permission: "You do not have permission to perform this action."
-      upload_sidekid: "Upload started successfully. Please wait a while and refresh the page (F5)."
+      upload_sidekiq: "Upload started successfully. Please wait a while and refresh the page (F5)."
       not_upload_sidekiq: "Invalid file or unsupported resource type."
+      wrong_file: "Invalid file format!"
     comments:
       created: "Comment created successfully."
       not_created: "An error occurred while creating the comment."

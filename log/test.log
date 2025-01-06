@@ -7791,3 +7791,536 @@ Processing by Devise::SessionsController#new as HTML
   Rendered layout layouts/application.html.erb (Duration: 8.3ms | GC: 0.0ms)
 Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
   [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (37.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8322778731448925205)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(8322778731448925205)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2025-01-06 06:56:30.639359"], ["updated_at", "2025-01-06 06:56:30.639359"], ["name", "Warley Reis Jr."]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] [UploadProcessorJob] [6c0e7d2c-0f81-474c-aae4-e9be3881c531] Performing UploadProcessorJob (Job ID: 6c0e7d2c-0f81-474c-aae4-e9be3881c531) from Sidekiq(default) with arguments: "C:/Users/felipe/AppData/Local/Temp/sample20250106-6004-2d34pd.txt", 1
+[ActiveJob] [UploadProcessorJob] [6c0e7d2c-0f81-474c-aae4-e9be3881c531]   [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+[ActiveJob] [UploadProcessorJob] [6c0e7d2c-0f81-474c-aae4-e9be3881c531] Performed UploadProcessorJob (Job ID: 6c0e7d2c-0f81-474c-aae4-e9be3881c531) from Sidekiq(default) in 3.18ms
+  [1m[36mPost Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2025-01-06 06:56:30.793827"], ["updated_at", "2025-01-06 06:56:30.793827"], ["name", "Morgana Carvalho"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Laborum cum omnis omnis."], ["content", "Et est cumque. Nesciunt fugit tenetur. Blanditiis autem dicta."], ["created_at", "2025-01-06 06:56:30.796073"], ["updated_at", "2025-01-06 06:56:30.796073"], ["user_id", 2]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."name" = $1 AND "tags"."post_id" = $2 LIMIT $3[0m  [["name", "rails"], ["post_id", 1], ["LIMIT", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."name" = $1 AND "tags"."post_id" = $2 LIMIT $3[0m  [["name", "ruby"], ["post_id", 1], ["LIMIT", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."name" = $1 AND "tags"."post_id" = $2 LIMIT $3[0m  [["name", "testing"], ["post_id", 1], ["LIMIT", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTag Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" WHERE "tags"."name" = $1 AND "tags"."post_id" = $2 LIMIT $3[0m  [["name", "rails"], ["post_id", 1], ["LIMIT", 1]]
+  [1m[36mTag Create (0.9ms)[0m  [1m[32mINSERT INTO "tags" ("name", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "rails"], ["post_id", 1], ["created_at", "2025-01-06 06:56:30.813295"], ["updated_at", "2025-01-06 06:56:30.813295"]]
+  [1m[36mTag Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" WHERE "tags"."name" = $1 AND "tags"."post_id" = $2 LIMIT $3[0m  [["name", "ruby"], ["post_id", 1], ["LIMIT", 1]]
+  [1m[36mTag Create (0.4ms)[0m  [1m[32mINSERT INTO "tags" ("name", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "ruby"], ["post_id", 1], ["created_at", "2025-01-06 06:56:30.815614"], ["updated_at", "2025-01-06 06:56:30.815614"]]
+  [1m[36mTag Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" WHERE "tags"."name" = $1 AND "tags"."post_id" = $2 LIMIT $3[0m  [["name", "testing"], ["post_id", 1], ["LIMIT", 1]]
+  [1m[36mTag Create (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "testing"], ["post_id", 1], ["created_at", "2025-01-06 06:56:30.817400"], ["updated_at", "2025-01-06 06:56:30.817400"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2025-01-06 06:56:30.824684"], ["updated_at", "2025-01-06 06:56:30.824684"], ["name", "Guilherme Silva"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Create (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Quos reiciendis libero minus."], ["content", "Amet ut aut. Dolor voluptas dolores. Consectetur non mollitia."], ["created_at", "2025-01-06 06:56:30.826760"], ["updated_at", "2025-01-06 06:56:30.826760"], ["user_id", 3]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."name" = $1 AND "tags"."post_id" = $2 LIMIT $3[0m  [["name", "rspec"], ["post_id", 2], ["LIMIT", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."name" = $1 AND "tags"."post_id" = $2 LIMIT $3[0m  [["name", "factorybot"], ["post_id", 2], ["LIMIT", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."post_id" = $1[0m  [["post_id", 2]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTag Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" WHERE "tags"."name" = $1 AND "tags"."post_id" = $2 LIMIT $3[0m  [["name", "rspec"], ["post_id", 2], ["LIMIT", 1]]
+  [1m[36mTag Create (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "rspec"], ["post_id", 2], ["created_at", "2025-01-06 06:56:30.831531"], ["updated_at", "2025-01-06 06:56:30.831531"]]
+  [1m[36mTag Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" WHERE "tags"."name" = $1 AND "tags"."post_id" = $2 LIMIT $3[0m  [["name", "factorybot"], ["post_id", 2], ["LIMIT", 1]]
+  [1m[36mTag Create (0.2ms)[0m  [1m[32mINSERT INTO "tags" ("name", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "factorybot"], ["post_id", 2], ["created_at", "2025-01-06 06:56:30.832989"], ["updated_at", "2025-01-06 06:56:30.832989"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTag Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" WHERE "tags"."name" = $1 AND "tags"."post_id" IS NULL LIMIT $2[0m  [["name", "Saúde"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2025-01-06 06:56:30.848856"], ["updated_at", "2025-01-06 06:56:30.848856"], ["name", nil]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "email" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["email", "[FILTERED]"], ["updated_at", "2025-01-06 06:56:30.850346"], ["id", 4]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2025-01-06 06:56:30.900646"], ["updated_at", "2025-01-06 06:56:30.900646"], ["name", "Sra. Feliciano Barros"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/posts" for 127.0.0.1 at 2025-01-06 03:56:30 -0300
+Processing by PostsController#create as JSON
+  Parameters: {"post"=>{"title"=>"Título", "content"=>"Conteúdo"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Create (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Título"], ["content", "Conteúdo"], ["created_at", "2025-01-06 06:56:30.948335"], ["updated_at", "2025-01-06 06:56:30.948335"], ["user_id", 5]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 26ms (Views: 0.3ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2025-01-06 06:56:30.969001"], ["updated_at", "2025-01-06 06:56:30.969001"], ["name", "Dr. Dalila Barros"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/posts" for 127.0.0.1 at 2025-01-06 03:56:30 -0300
+Processing by PostsController#create as JSON
+  Parameters: {"post"=>{"title"=>"", "content"=>"Conteúdo"}}
+Completed 422 Unprocessable Content in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2025-01-06 06:56:30.977109"], ["updated_at", "2025-01-06 06:56:30.977109"], ["name", "Sirineu Pereira"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/posts" for 127.0.0.1 at 2025-01-06 03:56:30 -0300
+Processing by PostsController#create as JSON
+  Parameters: {"post"=>{"title"=>"Título", "content"=>"Conteúdo"}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2025-01-06 06:56:30.985699"], ["updated_at", "2025-01-06 06:56:30.985699"], ["name", "Júlio Braga Filho"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Create (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Perspiciatis vero totam voluptatum."], ["content", "Aut error ipsa. Nihil et mollitia. Ut et iure."], ["created_at", "2025-01-06 06:56:30.987676"], ["updated_at", "2025-01-06 06:56:30.987676"], ["user_id", 8]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPost Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+Started DELETE "/posts/4" for 127.0.0.1 at 2025-01-06 03:56:30 -0300
+Processing by PostsController#destroy as JSON
+  Parameters: {"id"=>"4", "post"=>{}}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 4]]
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."post_id" = $1[0m  [["post_id", 4]]
+  [1m[36mPost Destroy (0.4ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 4]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 2.2ms (5 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mPost Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2025-01-06 06:56:31.004186"], ["updated_at", "2025-01-06 06:56:31.004186"], ["name", "Hélio Moreira"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Create (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Repudiandae debitis harum odit."], ["content", "Eum molestiae alias. Corrupti eos veritatis. Et accusamus dignissimos."], ["created_at", "2025-01-06 06:56:31.006301"], ["updated_at", "2025-01-06 06:56:31.006301"], ["user_id", 9]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/posts/5" for 127.0.0.1 at 2025-01-06 03:56:31 -0300
+Processing by PostsController#destroy as JSON
+  Parameters: {"id"=>"5", "post"=>{}}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2025-01-06 06:56:31.014362"], ["updated_at", "2025-01-06 06:56:31.014362"], ["name", "Sra. Esther Xavier"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Create (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Quis odit qui possimus."], ["content", "In autem et. Qui quia sed. Provident et inventore."], ["created_at", "2025-01-06 06:56:31.016212"], ["updated_at", "2025-01-06 06:56:31.016212"], ["user_id", 10]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PATCH "/posts/6" for 127.0.0.1 at 2025-01-06 03:56:31 -0300
+Processing by PostsController#update as JSON
+  Parameters: {"post"=>{"title"=>"Título atualizado", "content"=>"Conteúdo atualizado"}, "id"=>"6"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Update (0.5ms)[0m  [1m[33mUPDATE "posts" SET "title" = $1, "content" = $2, "updated_at" = $3 WHERE "posts"."id" = $4[0m  [["title", "Título atualizado"], ["content", "Conteúdo atualizado"], ["updated_at", "2025-01-06 06:56:31.021616"], ["id", 6]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 1.4ms (3 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2025-01-06 06:56:31.028986"], ["updated_at", "2025-01-06 06:56:31.028986"], ["name", "Vitória Lemos"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "A quia nostrum perferendis."], ["content", "Officia exercitationem quis. Quas nihil qui. Veniam voluptatem velit."], ["created_at", "2025-01-06 06:56:31.030824"], ["updated_at", "2025-01-06 06:56:31.030824"], ["user_id", 11]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PATCH "/posts/7" for 127.0.0.1 at 2025-01-06 03:56:31 -0300
+Processing by PostsController#update as JSON
+  Parameters: {"post"=>{"title"=>"", "content"=>"Conteúdo atualizado"}, "id"=>"7"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+Completed 422 Unprocessable Content in 3ms (Views: 0.3ms | ActiveRecord: 0.5ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2025-01-06 06:56:31.043294"], ["updated_at", "2025-01-06 06:56:31.043294"], ["name", "Deneval Costa"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Ipsam commodi ratione necessitatibus."], ["content", "Quam occaecati ut. Harum vel aperiam. Consequatur vitae sed."], ["created_at", "2025-01-06 06:56:31.045239"], ["updated_at", "2025-01-06 06:56:31.045239"], ["user_id", 12]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PATCH "/posts/8" for 127.0.0.1 at 2025-01-06 03:56:31 -0300
+Processing by PostsController#update as JSON
+  Parameters: {"post"=>{"title"=>"Título atualizado", "content"=>"Conteúdo atualizado"}, "id"=>"8"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2025-01-06 06:56:31.054212"], ["updated_at", "2025-01-06 06:56:31.054212"], ["name", "Eduarda Saraiva Neto"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPost Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+Started POST "/uploads" for 127.0.0.1 at 2025-01-06 03:56:31 -0300
+Processing by UploadsController#process_upload as HTML
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00000189366ea058 @tempfile=#<Tempfile:C:/Users/felipe/AppData/Local/Temp/RackMultipart20250106-6004-693cij.txt>, @content_type="text/plain", @original_filename="sample.txt", @headers="content-disposition: form-data; name=\"file\"; filename=\"sample.txt\"\r\ncontent-type: text/plain\r\ncontent-length: 129\r\n">}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mActiveStorage::Blob Create (1.0ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "1zeyuep0706k99p7tggvtybw7tp8"], ["filename", "1736146591_sample.txt"], ["content_type", "text/plain"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 127], ["checksum", "GW0gyC4m9tEl72oV0NQh5Q=="], ["created_at", "2025-01-06 06:56:31.094847"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[36m  Disk Storage (8.4ms) [0m[32mUploaded file to key: 1zeyuep0706k99p7tggvtybw7tp8 (checksum: GW0gyC4m9tEl72oV0NQh5Q==)[0m
+[ActiveJob] Enqueued UploadProcessorJob (Job ID: 4517230e-eb6f-4a2b-acd4-0d67b65c6d2e) to Test(default) with arguments: 1, 13
+Redirected to http://www.example.com/
+Completed 302 Found in 26ms (ActiveRecord: 2.6ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2025-01-06 06:56:31.112278"], ["updated_at", "2025-01-06 06:56:31.112278"], ["name", "Víctor Albuquerque"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/uploads" for 127.0.0.1 at 2025-01-06 03:56:31 -0300
+Processing by UploadsController#process_upload as HTML
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x0000018936865518 @tempfile=#<Tempfile:C:/Users/felipe/AppData/Local/Temp/RackMultipart20250106-6004-e70lxz.jpg>, @content_type="image/jpeg", @original_filename="invalid_file.jpg", @headers="content-disposition: form-data; name=\"file\"; filename=\"invalid_file.jpg\"\r\ncontent-type: image/jpeg\r\ncontent-length: 17565\r\n">}
+Redirected to http://www.example.com/
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/users" for 127.0.0.1 at 2025-01-06 03:56:31 -0300
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"user"=>{"name"=>"Marli D'cruze", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2025-01-06 06:56:31.142042"], ["updated_at", "2025-01-06 06:56:31.142042"], ["name", "Marli D'cruze"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 21ms (ActiveRecord: 1.6ms (3 queries, 0 cached) | GC: 0.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/users" for 127.0.0.1 at 2025-01-06 03:56:31 -0300
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"user"=>{"name"=>"", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/users/sign_up
+Completed 302 Found in 6ms (ActiveRecord: 0.7ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mUser Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2025-01-06 06:56:31.176497"], ["updated_at", "2025-01-06 06:56:31.176497"], ["name", "Roberta Moreira Neto"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/users/sign_in" for 127.0.0.1 at 2025-01-06 03:56:31 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+Redirected to http://www.example.com/
+Completed 303 See Other in 23ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+Started GET "/" for 127.0.0.1 at 2025-01-06 03:56:31 -0300
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered posts/index.html.erb within layouts/application (Duration: 4.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 421.1ms | GC: 0.3ms)
+Completed 500 Internal Server Error in 449ms (ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.3ms)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2025-01-06 06:56:31.662299"], ["updated_at", "2025-01-06 06:56:31.662299"], ["name", "Rafael Oliveira"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/users/sign_in" for 127.0.0.1 at 2025-01-06 03:56:31 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 7.0ms | GC: 0.0ms)
+  Rendered layouts/_navbar.html.erb (Duration: 1.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 35.1ms | GC: 0.0ms)
+Completed 200 OK in 44ms (Views: 43.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTag Count (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "tags"[0m
+  [1m[36mPost Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mActiveStorage::Blob Create (1.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "1caua9rnzquossxq1fb6clhlbjgp"], ["filename", "test.txt"], ["content_type", "text/plain"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 67], ["checksum", "4jIZGUwwNaej3cLcnrBAvg=="], ["created_at", "2025-01-06 06:59:12.551255"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[36m  Disk Storage (7.8ms) [0m[32mUploaded file to key: 1caua9rnzquossxq1fb6clhlbjgp (checksum: 4jIZGUwwNaej3cLcnrBAvg==)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2025-01-06 06:59:12.953338"], ["updated_at", "2025-01-06 06:59:12.953338"], ["name", "Júlio Costa"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] [UploadProcessorJob] [54e3d69f-f3b1-4d9e-b57b-cb7d661f8e99] Performing UploadProcessorJob (Job ID: 54e3d69f-f3b1-4d9e-b57b-cb7d661f8e99) from Sidekiq(default) with arguments: 2, 18
+[ActiveJob] [UploadProcessorJob] [54e3d69f-f3b1-4d9e-b57b-cb7d661f8e99]   [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob] [UploadProcessorJob] [54e3d69f-f3b1-4d9e-b57b-cb7d661f8e99] [36m  Disk Storage (0.1ms) [0m[34mDownloaded file from key: 1caua9rnzquossxq1fb6clhlbjgp[0m
+[ActiveJob] [UploadProcessorJob] [54e3d69f-f3b1-4d9e-b57b-cb7d661f8e99]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+[ActiveJob] [UploadProcessorJob] [54e3d69f-f3b1-4d9e-b57b-cb7d661f8e99]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[ActiveJob] [UploadProcessorJob] [54e3d69f-f3b1-4d9e-b57b-cb7d661f8e99]   [1m[36mPost Create (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Post Title"], ["content", "Post Content"], ["created_at", "2025-01-06 06:59:12.970375"], ["updated_at", "2025-01-06 06:59:12.970375"], ["user_id", 18]]
+[ActiveJob] [UploadProcessorJob] [54e3d69f-f3b1-4d9e-b57b-cb7d661f8e99]   [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[ActiveJob] [UploadProcessorJob] [54e3d69f-f3b1-4d9e-b57b-cb7d661f8e99]   [1m[36mTag Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" WHERE "tags"."name" = $1 AND "tags"."post_id" = $2 LIMIT $3[0m  [["name", "Tag1"], ["post_id", 9], ["LIMIT", 1]]
+[ActiveJob] [UploadProcessorJob] [54e3d69f-f3b1-4d9e-b57b-cb7d661f8e99]   [1m[36mTag Create (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Tag1"], ["post_id", 9], ["created_at", "2025-01-06 06:59:12.978015"], ["updated_at", "2025-01-06 06:59:12.978015"]]
+[ActiveJob] [UploadProcessorJob] [54e3d69f-f3b1-4d9e-b57b-cb7d661f8e99]   [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[ActiveJob] [UploadProcessorJob] [54e3d69f-f3b1-4d9e-b57b-cb7d661f8e99]   [1m[36mTag Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" WHERE "tags"."name" = $1 AND "tags"."post_id" = $2 LIMIT $3[0m  [["name", "Tag2"], ["post_id", 9], ["LIMIT", 1]]
+[ActiveJob] [UploadProcessorJob] [54e3d69f-f3b1-4d9e-b57b-cb7d661f8e99]   [1m[36mTag Create (0.2ms)[0m  [1m[32mINSERT INTO "tags" ("name", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Tag2"], ["post_id", 9], ["created_at", "2025-01-06 06:59:12.979835"], ["updated_at", "2025-01-06 06:59:12.979835"]]
+[ActiveJob] [UploadProcessorJob] [54e3d69f-f3b1-4d9e-b57b-cb7d661f8e99]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] [UploadProcessorJob] [54e3d69f-f3b1-4d9e-b57b-cb7d661f8e99]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[ActiveJob] [UploadProcessorJob] [54e3d69f-f3b1-4d9e-b57b-cb7d661f8e99]   [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Another Post"], ["content", "Another Content"], ["created_at", "2025-01-06 06:59:12.980902"], ["updated_at", "2025-01-06 06:59:12.980902"], ["user_id", 18]]
+[ActiveJob] [UploadProcessorJob] [54e3d69f-f3b1-4d9e-b57b-cb7d661f8e99]   [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+[ActiveJob] [UploadProcessorJob] [54e3d69f-f3b1-4d9e-b57b-cb7d661f8e99]   [1m[36mTag Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" WHERE "tags"."name" = $1 AND "tags"."post_id" = $2 LIMIT $3[0m  [["name", "Tag3"], ["post_id", 10], ["LIMIT", 1]]
+[ActiveJob] [UploadProcessorJob] [54e3d69f-f3b1-4d9e-b57b-cb7d661f8e99]   [1m[36mTag Create (0.2ms)[0m  [1m[32mINSERT INTO "tags" ("name", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Tag3"], ["post_id", 10], ["created_at", "2025-01-06 06:59:12.982725"], ["updated_at", "2025-01-06 06:59:12.982725"]]
+[ActiveJob] [UploadProcessorJob] [54e3d69f-f3b1-4d9e-b57b-cb7d661f8e99]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] [UploadProcessorJob] [54e3d69f-f3b1-4d9e-b57b-cb7d661f8e99] Performed UploadProcessorJob (Job ID: 54e3d69f-f3b1-4d9e-b57b-cb7d661f8e99) from Sidekiq(default) in 29.1ms
+  [1m[36mPost Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  [1m[36mTag Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "tags"[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTag Pluck (0.1ms)[0m  [1m[34mSELECT "tags"."name" FROM "tags" WHERE "tags"."post_id" = $1[0m  [["post_id", 9]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2025-01-06 06:59:13.028187"], ["updated_at", "2025-01-06 06:59:13.028187"], ["name", "Sara Pereira"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] [UploadProcessorJob] [4fba3657-18bd-4d72-a673-efb7c3f47031] Performing UploadProcessorJob (Job ID: 4fba3657-18bd-4d72-a673-efb7c3f47031) from Sidekiq(default) with arguments: -1, 19
+[ActiveJob] [UploadProcessorJob] [4fba3657-18bd-4d72-a673-efb7c3f47031]   [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", -1], ["LIMIT", 1]]
+[ActiveJob] [UploadProcessorJob] [4fba3657-18bd-4d72-a673-efb7c3f47031] Performed UploadProcessorJob (Job ID: 4fba3657-18bd-4d72-a673-efb7c3f47031) from Sidekiq(default) in 0.47ms
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTag Count (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "tags"[0m
+  [1m[36mPost Count (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mActiveStorage::Blob Create (1.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "nzgfu7fpp6s32f703toi5jtgx9uz"], ["filename", "test.txt"], ["content_type", "text/plain"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 67], ["checksum", "4jIZGUwwNaej3cLcnrBAvg=="], ["created_at", "2025-01-06 07:00:23.536325"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[36m  Disk Storage (2.3ms) [0m[32mUploaded file to key: nzgfu7fpp6s32f703toi5jtgx9uz (checksum: 4jIZGUwwNaej3cLcnrBAvg==)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2025-01-06 07:00:23.938950"], ["updated_at", "2025-01-06 07:00:23.938950"], ["name", "Eduarda Costa"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] [UploadProcessorJob] [042f21e1-0b96-41f0-99e2-40ea32e24ee8] Performing UploadProcessorJob (Job ID: 042f21e1-0b96-41f0-99e2-40ea32e24ee8) from Sidekiq(default) with arguments: 3, 20
+[ActiveJob] [UploadProcessorJob] [042f21e1-0b96-41f0-99e2-40ea32e24ee8]   [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[ActiveJob] [UploadProcessorJob] [042f21e1-0b96-41f0-99e2-40ea32e24ee8] [36m  Disk Storage (0.2ms) [0m[34mDownloaded file from key: nzgfu7fpp6s32f703toi5jtgx9uz[0m
+[ActiveJob] [UploadProcessorJob] [042f21e1-0b96-41f0-99e2-40ea32e24ee8]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+[ActiveJob] [UploadProcessorJob] [042f21e1-0b96-41f0-99e2-40ea32e24ee8]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[ActiveJob] [UploadProcessorJob] [042f21e1-0b96-41f0-99e2-40ea32e24ee8]   [1m[36mPost Create (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Post Title"], ["content", "Post Content"], ["created_at", "2025-01-06 07:00:23.951385"], ["updated_at", "2025-01-06 07:00:23.951385"], ["user_id", 20]]
+[ActiveJob] [UploadProcessorJob] [042f21e1-0b96-41f0-99e2-40ea32e24ee8]   [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[ActiveJob] [UploadProcessorJob] [042f21e1-0b96-41f0-99e2-40ea32e24ee8]   [1m[36mTag Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" WHERE "tags"."name" = $1 AND "tags"."post_id" = $2 LIMIT $3[0m  [["name", "Tag1"], ["post_id", 11], ["LIMIT", 1]]
+[ActiveJob] [UploadProcessorJob] [042f21e1-0b96-41f0-99e2-40ea32e24ee8]   [1m[36mTag Create (0.4ms)[0m  [1m[32mINSERT INTO "tags" ("name", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Tag1"], ["post_id", 11], ["created_at", "2025-01-06 07:00:23.959629"], ["updated_at", "2025-01-06 07:00:23.959629"]]
+[ActiveJob] [UploadProcessorJob] [042f21e1-0b96-41f0-99e2-40ea32e24ee8]   [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[ActiveJob] [UploadProcessorJob] [042f21e1-0b96-41f0-99e2-40ea32e24ee8]   [1m[36mTag Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" WHERE "tags"."name" = $1 AND "tags"."post_id" = $2 LIMIT $3[0m  [["name", "Tag2"], ["post_id", 11], ["LIMIT", 1]]
+[ActiveJob] [UploadProcessorJob] [042f21e1-0b96-41f0-99e2-40ea32e24ee8]   [1m[36mTag Create (0.2ms)[0m  [1m[32mINSERT INTO "tags" ("name", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Tag2"], ["post_id", 11], ["created_at", "2025-01-06 07:00:23.961961"], ["updated_at", "2025-01-06 07:00:23.961961"]]
+[ActiveJob] [UploadProcessorJob] [042f21e1-0b96-41f0-99e2-40ea32e24ee8]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] [UploadProcessorJob] [042f21e1-0b96-41f0-99e2-40ea32e24ee8]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[ActiveJob] [UploadProcessorJob] [042f21e1-0b96-41f0-99e2-40ea32e24ee8]   [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Another Post"], ["content", "Another Content"], ["created_at", "2025-01-06 07:00:23.963206"], ["updated_at", "2025-01-06 07:00:23.963206"], ["user_id", 20]]
+[ActiveJob] [UploadProcessorJob] [042f21e1-0b96-41f0-99e2-40ea32e24ee8]   [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+[ActiveJob] [UploadProcessorJob] [042f21e1-0b96-41f0-99e2-40ea32e24ee8]   [1m[36mTag Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" WHERE "tags"."name" = $1 AND "tags"."post_id" = $2 LIMIT $3[0m  [["name", "Tag3"], ["post_id", 12], ["LIMIT", 1]]
+[ActiveJob] [UploadProcessorJob] [042f21e1-0b96-41f0-99e2-40ea32e24ee8]   [1m[36mTag Create (0.2ms)[0m  [1m[32mINSERT INTO "tags" ("name", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Tag3"], ["post_id", 12], ["created_at", "2025-01-06 07:00:23.965184"], ["updated_at", "2025-01-06 07:00:23.965184"]]
+[ActiveJob] [UploadProcessorJob] [042f21e1-0b96-41f0-99e2-40ea32e24ee8]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] [UploadProcessorJob] [042f21e1-0b96-41f0-99e2-40ea32e24ee8] Performed UploadProcessorJob (Job ID: 042f21e1-0b96-41f0-99e2-40ea32e24ee8) from Sidekiq(default) in 25.86ms
+  [1m[36mPost Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  [1m[36mTag Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "tags"[0m
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTag Pluck (0.1ms)[0m  [1m[34mSELECT "tags"."name" FROM "tags" WHERE "tags"."post_id" = $1[0m  [["post_id", 11]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2025-01-06 07:00:23.997928"], ["updated_at", "2025-01-06 07:00:23.997928"], ["name", "Joana Martins Filho"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] [UploadProcessorJob] [85401d14-7748-4eec-a46e-ca60b2566416] Performing UploadProcessorJob (Job ID: 85401d14-7748-4eec-a46e-ca60b2566416) from Sidekiq(default) with arguments: -1, 21
+[ActiveJob] [UploadProcessorJob] [85401d14-7748-4eec-a46e-ca60b2566416]   [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", -1], ["LIMIT", 1]]
+[ActiveJob] [UploadProcessorJob] [85401d14-7748-4eec-a46e-ca60b2566416] Performed UploadProcessorJob (Job ID: 85401d14-7748-4eec-a46e-ca60b2566416) from Sidekiq(default) in 0.46ms
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mActiveStorage::Blob Create (0.7ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "ot3ww0bkqaemgwvmvoztbx4fjyie"], ["filename", "test.txt"], ["content_type", "text/plain"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 12], ["checksum", "Gvf6K21xAufS3C5ga94jSA=="], ["created_at", "2025-01-06 07:00:24.001856"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[36m  Disk Storage (8.7ms) [0m[32mUploaded file to key: ot3ww0bkqaemgwvmvoztbx4fjyie (checksum: Gvf6K21xAufS3C5ga94jSA==)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2025-01-06 07:00:24.015687"], ["updated_at", "2025-01-06 07:00:24.015687"], ["name", "Isabela Araújo"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] [UploadProcessorJob] [ad53e582-bc24-4cbb-a96d-39446bcd0d4b] Performing UploadProcessorJob (Job ID: ad53e582-bc24-4cbb-a96d-39446bcd0d4b) from Sidekiq(default) with arguments: 4, 22
+[ActiveJob] [UploadProcessorJob] [ad53e582-bc24-4cbb-a96d-39446bcd0d4b]   [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[ActiveJob] [UploadProcessorJob] [ad53e582-bc24-4cbb-a96d-39446bcd0d4b] [36m  Disk Storage (0.2ms) [0m[34mDownloaded file from key: ot3ww0bkqaemgwvmvoztbx4fjyie[0m
+[ActiveJob] [UploadProcessorJob] [ad53e582-bc24-4cbb-a96d-39446bcd0d4b]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+[ActiveJob] [UploadProcessorJob] [ad53e582-bc24-4cbb-a96d-39446bcd0d4b]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[ActiveJob] [UploadProcessorJob] [ad53e582-bc24-4cbb-a96d-39446bcd0d4b]   [1m[36mPost Create (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Invalid"], ["content", "Line"], ["created_at", "2025-01-06 07:00:24.023934"], ["updated_at", "2025-01-06 07:00:24.023934"], ["user_id", 22]]
+[ActiveJob] [UploadProcessorJob] [ad53e582-bc24-4cbb-a96d-39446bcd0d4b]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] [UploadProcessorJob] [ad53e582-bc24-4cbb-a96d-39446bcd0d4b] Performed UploadProcessorJob (Job ID: ad53e582-bc24-4cbb-a96d-39446bcd0d4b) from Sidekiq(default) in 8.32ms
+  [1m[36mPost Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTag Count (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "tags"[0m
+  [1m[36mPost Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mActiveStorage::Blob Create (1.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "gummd8ja85ezl2uk34thbxnjfx1p"], ["filename", "test.txt"], ["content_type", "text/plain"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 67], ["checksum", "4jIZGUwwNaej3cLcnrBAvg=="], ["created_at", "2025-01-06 07:02:15.946523"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[36m  Disk Storage (2.0ms) [0m[32mUploaded file to key: gummd8ja85ezl2uk34thbxnjfx1p (checksum: 4jIZGUwwNaej3cLcnrBAvg==)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2025-01-06 07:02:16.361131"], ["updated_at", "2025-01-06 07:02:16.361131"], ["name", "Alexandre Moreira"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] [UploadProcessorJob] [e922b5a9-e26c-439e-9476-b3bc5bbe052f] Performing UploadProcessorJob (Job ID: e922b5a9-e26c-439e-9476-b3bc5bbe052f) from Sidekiq(default) with arguments: 5, 23
+[ActiveJob] [UploadProcessorJob] [e922b5a9-e26c-439e-9476-b3bc5bbe052f]   [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[ActiveJob] [UploadProcessorJob] [e922b5a9-e26c-439e-9476-b3bc5bbe052f] [36m  Disk Storage (0.1ms) [0m[34mDownloaded file from key: gummd8ja85ezl2uk34thbxnjfx1p[0m
+[ActiveJob] [UploadProcessorJob] [e922b5a9-e26c-439e-9476-b3bc5bbe052f]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+[ActiveJob] [UploadProcessorJob] [e922b5a9-e26c-439e-9476-b3bc5bbe052f]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[ActiveJob] [UploadProcessorJob] [e922b5a9-e26c-439e-9476-b3bc5bbe052f]   [1m[36mPost Create (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Post Title"], ["content", "Post Content"], ["created_at", "2025-01-06 07:02:16.373458"], ["updated_at", "2025-01-06 07:02:16.373458"], ["user_id", 23]]
+[ActiveJob] [UploadProcessorJob] [e922b5a9-e26c-439e-9476-b3bc5bbe052f]   [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+[ActiveJob] [UploadProcessorJob] [e922b5a9-e26c-439e-9476-b3bc5bbe052f]   [1m[36mTag Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" WHERE "tags"."name" = $1 AND "tags"."post_id" = $2 LIMIT $3[0m  [["name", "Tag1"], ["post_id", 14], ["LIMIT", 1]]
+[ActiveJob] [UploadProcessorJob] [e922b5a9-e26c-439e-9476-b3bc5bbe052f]   [1m[36mTag Create (0.4ms)[0m  [1m[32mINSERT INTO "tags" ("name", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Tag1"], ["post_id", 14], ["created_at", "2025-01-06 07:02:16.380772"], ["updated_at", "2025-01-06 07:02:16.380772"]]
+[ActiveJob] [UploadProcessorJob] [e922b5a9-e26c-439e-9476-b3bc5bbe052f]   [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+[ActiveJob] [UploadProcessorJob] [e922b5a9-e26c-439e-9476-b3bc5bbe052f]   [1m[36mTag Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" WHERE "tags"."name" = $1 AND "tags"."post_id" = $2 LIMIT $3[0m  [["name", "Tag2"], ["post_id", 14], ["LIMIT", 1]]
+[ActiveJob] [UploadProcessorJob] [e922b5a9-e26c-439e-9476-b3bc5bbe052f]   [1m[36mTag Create (0.2ms)[0m  [1m[32mINSERT INTO "tags" ("name", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Tag2"], ["post_id", 14], ["created_at", "2025-01-06 07:02:16.382757"], ["updated_at", "2025-01-06 07:02:16.382757"]]
+[ActiveJob] [UploadProcessorJob] [e922b5a9-e26c-439e-9476-b3bc5bbe052f]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] [UploadProcessorJob] [e922b5a9-e26c-439e-9476-b3bc5bbe052f]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[ActiveJob] [UploadProcessorJob] [e922b5a9-e26c-439e-9476-b3bc5bbe052f]   [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Another Post"], ["content", "Another Content"], ["created_at", "2025-01-06 07:02:16.384205"], ["updated_at", "2025-01-06 07:02:16.384205"], ["user_id", 23]]
+[ActiveJob] [UploadProcessorJob] [e922b5a9-e26c-439e-9476-b3bc5bbe052f]   [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+[ActiveJob] [UploadProcessorJob] [e922b5a9-e26c-439e-9476-b3bc5bbe052f]   [1m[36mTag Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" WHERE "tags"."name" = $1 AND "tags"."post_id" = $2 LIMIT $3[0m  [["name", "Tag3"], ["post_id", 15], ["LIMIT", 1]]
+[ActiveJob] [UploadProcessorJob] [e922b5a9-e26c-439e-9476-b3bc5bbe052f]   [1m[36mTag Create (0.2ms)[0m  [1m[32mINSERT INTO "tags" ("name", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Tag3"], ["post_id", 15], ["created_at", "2025-01-06 07:02:16.386060"], ["updated_at", "2025-01-06 07:02:16.386060"]]
+[ActiveJob] [UploadProcessorJob] [e922b5a9-e26c-439e-9476-b3bc5bbe052f]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] [UploadProcessorJob] [e922b5a9-e26c-439e-9476-b3bc5bbe052f] Performed UploadProcessorJob (Job ID: e922b5a9-e26c-439e-9476-b3bc5bbe052f) from Sidekiq(default) in 24.55ms
+  [1m[36mPost Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  [1m[36mTag Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "tags"[0m
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTag Pluck (0.1ms)[0m  [1m[34mSELECT "tags"."name" FROM "tags" WHERE "tags"."post_id" = $1[0m  [["post_id", 14]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2025-01-06 07:02:16.418572"], ["updated_at", "2025-01-06 07:02:16.418572"], ["name", "Paulo Souza Neto"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] [UploadProcessorJob] [34cb318f-4af1-4a9b-be8f-10036d40ef54] Performing UploadProcessorJob (Job ID: 34cb318f-4af1-4a9b-be8f-10036d40ef54) from Sidekiq(default) with arguments: -1, 24
+[ActiveJob] [UploadProcessorJob] [34cb318f-4af1-4a9b-be8f-10036d40ef54]   [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", -1], ["LIMIT", 1]]
+[ActiveJob] [UploadProcessorJob] [34cb318f-4af1-4a9b-be8f-10036d40ef54] Performed UploadProcessorJob (Job ID: 34cb318f-4af1-4a9b-be8f-10036d40ef54) from Sidekiq(default) in 0.47ms
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mActiveStorage::Blob Create (0.3ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "119plrek5fv5sel29fub9akyofq8"], ["filename", "test.txt"], ["content_type", "text/plain"], ["metadata", "{\"identified\":true}"], ["service_name", "test"], ["byte_size", 67], ["checksum", "4jIZGUwwNaej3cLcnrBAvg=="], ["created_at", "2025-01-06 07:02:16.422217"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[36m  Disk Storage (2.3ms) [0m[32mUploaded file to key: 119plrek5fv5sel29fub9akyofq8 (checksum: 4jIZGUwwNaej3cLcnrBAvg==)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2025-01-06 07:02:16.429309"], ["updated_at", "2025-01-06 07:02:16.429309"], ["name", "Ígor Souza Jr."]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] [UploadProcessorJob] [a1b7b012-204c-40f7-99f3-ec5eb6bdcc86] Performing UploadProcessorJob (Job ID: a1b7b012-204c-40f7-99f3-ec5eb6bdcc86) from Sidekiq(default) with arguments: 6, 25
+[ActiveJob] [UploadProcessorJob] [a1b7b012-204c-40f7-99f3-ec5eb6bdcc86]   [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[ActiveJob] [UploadProcessorJob] [a1b7b012-204c-40f7-99f3-ec5eb6bdcc86] [36m  Disk Storage (0.2ms) [0m[34mDownloaded file from key: 119plrek5fv5sel29fub9akyofq8[0m
+[ActiveJob] [UploadProcessorJob] [a1b7b012-204c-40f7-99f3-ec5eb6bdcc86]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+[ActiveJob] [UploadProcessorJob] [a1b7b012-204c-40f7-99f3-ec5eb6bdcc86]   [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[ActiveJob] [UploadProcessorJob] [a1b7b012-204c-40f7-99f3-ec5eb6bdcc86]   [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Post Title"], ["content", "Post Content"], ["created_at", "2025-01-06 07:02:16.434189"], ["updated_at", "2025-01-06 07:02:16.434189"], ["user_id", 25]]
+[ActiveJob] [UploadProcessorJob] [a1b7b012-204c-40f7-99f3-ec5eb6bdcc86]   [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+[ActiveJob] [UploadProcessorJob] [a1b7b012-204c-40f7-99f3-ec5eb6bdcc86]   [1m[36mTag Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" WHERE "tags"."name" = $1 AND "tags"."post_id" = $2 LIMIT $3[0m  [["name", "Tag1"], ["post_id", 16], ["LIMIT", 1]]
+[ActiveJob] [UploadProcessorJob] [a1b7b012-204c-40f7-99f3-ec5eb6bdcc86]   [1m[36mTag Create (0.2ms)[0m  [1m[32mINSERT INTO "tags" ("name", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Tag1"], ["post_id", 16], ["created_at", "2025-01-06 07:02:16.437966"], ["updated_at", "2025-01-06 07:02:16.437966"]]
+[ActiveJob] [UploadProcessorJob] [a1b7b012-204c-40f7-99f3-ec5eb6bdcc86]   [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+[ActiveJob] [UploadProcessorJob] [a1b7b012-204c-40f7-99f3-ec5eb6bdcc86]   [1m[36mTag Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" WHERE "tags"."name" = $1 AND "tags"."post_id" = $2 LIMIT $3[0m  [["name", "Tag2"], ["post_id", 16], ["LIMIT", 1]]
+[ActiveJob] [UploadProcessorJob] [a1b7b012-204c-40f7-99f3-ec5eb6bdcc86]   [1m[36mTag Create (0.2ms)[0m  [1m[32mINSERT INTO "tags" ("name", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Tag2"], ["post_id", 16], ["created_at", "2025-01-06 07:02:16.439914"], ["updated_at", "2025-01-06 07:02:16.439914"]]
+[ActiveJob] [UploadProcessorJob] [a1b7b012-204c-40f7-99f3-ec5eb6bdcc86]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] [UploadProcessorJob] [a1b7b012-204c-40f7-99f3-ec5eb6bdcc86]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[ActiveJob] [UploadProcessorJob] [a1b7b012-204c-40f7-99f3-ec5eb6bdcc86]   [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Another Post"], ["content", "Another Content"], ["created_at", "2025-01-06 07:02:16.440943"], ["updated_at", "2025-01-06 07:02:16.440943"], ["user_id", 25]]
+[ActiveJob] [UploadProcessorJob] [a1b7b012-204c-40f7-99f3-ec5eb6bdcc86]   [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+[ActiveJob] [UploadProcessorJob] [a1b7b012-204c-40f7-99f3-ec5eb6bdcc86]   [1m[36mTag Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "tags" WHERE "tags"."name" = $1 AND "tags"."post_id" = $2 LIMIT $3[0m  [["name", "Tag3"], ["post_id", 17], ["LIMIT", 1]]
+[ActiveJob] [UploadProcessorJob] [a1b7b012-204c-40f7-99f3-ec5eb6bdcc86]   [1m[36mTag Create (0.2ms)[0m  [1m[32mINSERT INTO "tags" ("name", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Tag3"], ["post_id", 17], ["created_at", "2025-01-06 07:02:16.442730"], ["updated_at", "2025-01-06 07:02:16.442730"]]
+[ActiveJob] [UploadProcessorJob] [a1b7b012-204c-40f7-99f3-ec5eb6bdcc86]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] [UploadProcessorJob] [a1b7b012-204c-40f7-99f3-ec5eb6bdcc86] Performed UploadProcessorJob (Job ID: a1b7b012-204c-40f7-99f3-ec5eb6bdcc86) from Sidekiq(default) in 13.61ms
+  [1m[36mPost Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
