@@ -2,30 +2,41 @@ class UploadProcessorJob < ApplicationJob
   queue_as :default
 
   def perform(blob_id, user_id)
-    # Encontrar o blob pelo ID
+    Rails.logger.info "Iniciando processamento do job para blob ID: #{blob_id}, usuário ID: #{user_id}"
+  
+    # Verificar se o blob é encontrado
     blob = ActiveStorage::Blob.find_by(id: blob_id)
-    
-    # Log para verificar a chave do arquivo
-    Rails.logger.info "Blob ID: #{blob.id}, Key: #{blob.key}"  # Verifique se a key é a mesma
-
-    # Levantar erro caso o blob não seja encontrado
-    raise "Blob não encontrado com ID #{blob_id}" if blob.nil?
-
-    # Baixar o conteúdo do arquivo de maneira segura
-    file_data = blob.download
-
-    # Salvar o conteúdo em um arquivo temporário para usar o File.readlines
+    if blob.nil?
+      Rails.logger.error "Blob não encontrado com ID: #{blob_id}"
+      return
+    end
+  
+    Rails.logger.info "Blob encontrado: #{blob.inspect}"
+  
+    # Tente baixar o arquivo
+    begin
+      file_data = blob.download
+      Rails.logger.info "Arquivo baixado com sucesso: #{file_data[0..100]}..." # Mostra os primeiros 100 caracteres
+    rescue => e
+      Rails.logger.error "Erro ao baixar o arquivo do blob: #{e.message}"
+      return
+    end
+  
+    # Salvar o conteúdo do arquivo em um arquivo temporário
     tempfile = Tempfile.new(['uploaded_file', '.txt'])
     tempfile.binmode
     tempfile.write(file_data)
     tempfile.rewind
-
+  
     # Processar o arquivo
-    process_file(tempfile.path, user_id)
-
-    # Fechar e excluir o arquivo temporário após o processamento
-    tempfile.close
-    tempfile.unlink
+    begin
+      process_file(tempfile.path, user_id)
+    rescue => e
+      Rails.logger.error "Erro durante o processamento do arquivo: #{e.message}"
+    ensure
+      tempfile.close
+      tempfile.unlink
+    end
   end
 
   private

@@ -6,7 +6,7 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address:         "smtp.gmail.com",
     port:            587,
-    domain:          "localhost",
+    domain:          "blogapp-rails.fly.dev",
     user_name:       ENV["SMTP_USERNAME"],
     password:        ENV["SMTP_PASSWORD"],
     authentication:  "plain",
@@ -16,6 +16,9 @@ Rails.application.configure do
   }
   # Code is not reloaded between requests.
   config.enable_reloading = false
+
+  config.action_mailer.default_url_options = { host: 'blogapp-rails.fly.dev', protocol: 'https' }
+
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
@@ -28,6 +31,8 @@ Rails.application.configure do
   config.action_controller.perform_caching = true
 
   config.active_storage.service = :production
+
+  config.active_storage.service = :disk
 
   # Ensures that a master key has been made available in ENV["RAILS_MASTER_KEY"], config/master.key, or an environment
   # key such as config/credentials/production.key. This key is used to decrypt credentials (and other encrypted files).
