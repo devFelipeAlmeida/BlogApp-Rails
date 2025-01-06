@@ -19,6 +19,7 @@ RSpec.describe "UploadsController", type: :request do
         follow_redirect!
 
         expect(flash[:notice]).to eq(I18n.t("flash.posts.upload_sidekiq"))
+      end
     end
 
     context "quando o arquivo não é válido" do
