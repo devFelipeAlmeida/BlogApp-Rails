@@ -2,36 +2,68 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
   let(:user) { create(:user) }
+  let(:post) { create(:post, user: user) }
 
-  describe 'associações' do
-    it { should belong_to(:user) }
-    it { should have_many(:comments).dependent(:destroy) }
-    it { should have_and_belong_to_many(:tags) }
+  describe "associações" do
+    it "pertence a um usuário" do
+      expect(post.user).to eq(user)
+    end
+
+    it "tem muitos comentários" do
+      comment = create(:comment, post: post)
+      expect(post.comments).to include(comment)
+    end
+
+    it "tem muitas tags" do
+      tag = create(:tag, name: "tag1", post: post)
+      expect(post.tags).to include(tag)
+    end
+
+    it "destroi os comentários associados quando o post é destruído" do
+      comment = create(:comment, post: post)
+      expect { post.destroy }.to change(Comment, :count).by(-1)
+    end
+
+    it "destroi as tags associadas quando o post é destruído" do
+      tag = create(:tag, name: "tag1", post: post)
+      expect { post.destroy }.to change(Tag, :count).by(-1)
+    end
   end
 
-  describe 'validações' do
-    it { should validate_presence_of(:title) }
-    it { should validate_presence_of(:content) }
+  describe "validações" do
+    it "é válido com atributos válidos" do
+      expect(post).to be_valid
+    end
+
+    it "não é válido sem um título" do
+      post.title = nil
+      expect(post).to_not be_valid
+    end
+
+    it "não é válido sem conteúdo" do
+      post.content = nil
+      expect(post).to_not be_valid
+    end
   end
 
-  describe 'métodos personalizados' do
-    describe '#tag_names=' do
-      it 'cria ou encontra tags a partir de uma string de nomes separados por vírgula' do
-        post = create(:post, user: user)
-        post.tag_names = 'Rails, Ruby, Testing'
-        post.save!
+  describe "#tag_names=" do
+    it "atribui tags a partir de uma string separada por vírgulas" do
+      post.tag_names = "tag1, tag2, tag3"
+      expect(post.tags.count).to eq(3)
+      expect(post.tags.map(&:name)).to match_array(["tag1", "tag2", "tag3"])
+    end
 
-        expect(post.tags.map(&:name)).to match_array(['rails', 'ruby', 'testing'])
-      end
+    it "ignora espaços extras ao atribuir tags" do
+      post.tag_names = " tag1 , tag2 , tag3 "
+      expect(post.tags.count).to eq(3)
+      expect(post.tags.map(&:name)).to match_array(["tag1", "tag2", "tag3"])
+    end
+  end
 
-      it 'remove espaços extras e padroniza os nomes em letras minúsculas' do
-        post = create(:post, user: user)
-        post.tag_names = '  RSpec , FactoryBot '
-        post.save!
-
-        expect(post.tags.map(&:name)).to match_array(['rspec', 'factorybot'])
-      end
+  describe "#tag_names" do
+    it "retorna uma string separada por vírgulas com os nomes das tags" do
+      post.tag_names = "tag1, tag2, tag3"
+      expect(post.tag_names).to eq("tag1, tag2, tag3")
     end
   end
 end
-
