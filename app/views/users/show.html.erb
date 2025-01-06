@@ -6,7 +6,7 @@
       </div>
       <div class="text-center">
         <h1 class="fs-3 fw-bold mb-0"><%= @user.name %></h1>
-        <p class="text-muted mb-0"><%=t("user_page.member")%> <%= @user.created_at.strftime('%d/%m/%Y') %></p>
+        <p class="text-muted mb-0"><%= t("user_page.member") %> <%= @user.created_at.strftime('%d/%m/%Y') %></p>
       </div>
     </div>
   </div>
@@ -36,7 +36,7 @@
     </div>
 
     <h2 class="fs-4 fw-bold mb-3"><%= t("user_page.my_posts") %></h2>
-    
+
     <% @posts.each do |post| %>
       <div class="card mb-3">
         <div class="card-body">
@@ -52,10 +52,17 @@
           <div class="d-flex align-items-center gap-3 mt-3">
             <span class="text-muted">
               <i class="bi bi-chat-dots me-1"></i>
-              <%= post.comments.count %> <%=t("user_page.comments_show")%>
+              <%= post.comments.count %> <%= t("user_page.comments_show") %>
             </span>
             <%= link_to t("user_page.read_more"), post_path(post), class: "text-primary text-decoration-none" %>
           </div>
+          <% if current_user == post.user %>
+            <div class="d-flex justify-content-end">
+              <%= link_to t("post_show.btn_edit"), edit_post_path(post), class: 'btn btn-primary btn-sm me-2' %>
+              <%= button_to t("post_show.btn_delete"), post_path(post), method: :delete,
+                  data: { confirm: t("post_show.confirm_delete") }, class: 'btn btn-danger btn-sm' %>
+            </div>
+          <% end %>
         </div>
       </div>
     <% end %>

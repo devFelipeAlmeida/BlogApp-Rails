@@ -41,7 +41,7 @@ class PostsController < ApplicationController
   end
 
   def edit
-    render json: @post
+    render :edit
   end
 
   def create
