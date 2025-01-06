@@ -115,9 +115,8 @@ pt:
       not_updated: "Não foi possível atualizar o Post."
       deleted: "Post excluído com sucesso."
       not_permission: "Você não tem permissão para realizar essa ação."
-      upload_sidekiq: "Upload iniciado com sucesso. Por favor, aguarde um pouco e atualize a página (F5)."
+      upload_sidekiq: "Upload iniciado com sucesso. Por favor, aguarde um pouco e atualize a página (F5). Caso o arquivo seja válido ele será publicado."
       not_upload_sidekiq: "Arquivo inválido ou tipo de recurso não suportado."
-      wrong_file: "Formato de arquivo inválido!"
     comments:
       created: "Comentário criado com sucesso."
       not_created: "Ocorreu um erro ao criar o comentário."
