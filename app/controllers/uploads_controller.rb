@@ -3,7 +3,6 @@ class UploadsController < ApplicationController
     file = params[:file]
   
     if file && file.content_type == "text/plain"
-      # Forçar a criação de um novo blob
       unique_filename = "#{Time.now.to_i}_#{file.original_filename}"
       blob = ActiveStorage::Blob.create_and_upload!(
         io: file.tempfile, 
@@ -11,7 +10,6 @@ class UploadsController < ApplicationController
         content_type: file.content_type
       )
   
-      # Enfileira o job passando o ID do blob criado
       UploadProcessorJob.perform_later(blob.id, current_user.id)
   
       redirect_to root_path, notice: t("flash.posts.upload_sidekiq")
