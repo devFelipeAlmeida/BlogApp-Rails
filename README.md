@@ -74,7 +74,7 @@ Este é um blog completo desenvolvido com **Ruby on Rails**, utilizando **Postgr
 
 5. **Rodar os testes automatizados (caso precise):**
    ```bash
-    bundle exec sidekiq
+    bundle exec rspec
 
 6. **Comente as linhas 16 e 17 no arquivo config/environments/development.rb, e 10, 11 do config/environments/production.rb:**
    ```bash
