@@ -175,6 +175,6 @@ pt:
       confirmed: "Conta confirmada com sucesso."
       resend: "Reenvio de e-mail de confirmação foi bem-sucedido."
     passwords:
-      send_instructions: "Instruções enviadas para o e-mail com sucesso."
+      send_instructions: "Instruções enviadas para o e-mail com sucesso. Verifique sua caixa de spam ou importante no email."
       updated: "Senha alterada com sucesso."
       not_updated: "Não foi possível alterar a senha."

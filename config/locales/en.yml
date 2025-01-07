@@ -175,6 +175,6 @@ en:
       confirmed: "Your account has been confirmed successfully."
       resend: "Confirmation email has been successfully resent."
     passwords:
-      send_instructions: "Instructions have been successfully sent to your email."
+      send_instructions: "Instructions sent to email successfully. Check your spam or important email folder."
       updated: "Your password has been changed successfully."
       not_updated: "Unable to change the password."
