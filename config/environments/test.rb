@@ -32,4 +32,8 @@ Rails.application.configure do
   config.active_support.disallowed_deprecation_warnings = []
 
   config.action_controller.raise_on_missing_callback_actions = true
+
+  Rails.application.config.assets.configure do |env|
+    env.cache = Sprockets::Cache::FileStore.new(Rails.root.join('tmp', 'test_cache', 'assets'))
+  end
 end
