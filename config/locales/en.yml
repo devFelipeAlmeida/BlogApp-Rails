@@ -171,6 +171,7 @@ en:
         unauthenticated: "Only logged in users can create posts."
         invalid: "Invalid email or password."
         not_found_in_database: "Invalid email or password."
+        already_authenticated: "You are already authenticated."
     confirmations:
       confirmed: "Your account has been confirmed successfully."
       resend: "Confirmation email has been successfully resent."
