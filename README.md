@@ -76,7 +76,7 @@ Este é um blog completo desenvolvido com **Ruby on Rails**, utilizando **Postgr
    ```bash
     bundle exec rspec
 
-6. **Comente as linhas 16 e 17 no arquivo config/environments/development.rb, e 10, 11 do config/environments/production.rb:**
+6. **Comente as linhas 11 e 12 no arquivo config/environments/development.rb, e 9, 10 do config/environments/production.rb:**
    ```bash
     #user_name:       ENV["SMTP_USERNAME"],
     #password:        ENV["SMTP_PASSWORD"],
